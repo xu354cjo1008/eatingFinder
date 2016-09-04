@@ -17,27 +17,32 @@ type dataset struct {
 	XMLName		xml.Name	`xml:"dataset"`
 	Locations	[]location	`xml:"location"`
 }
+
 type location struct {
 	XMLName         xml.Name			`xml:"location"`
 	LocationName    string				`xml:"locationName"`
 	WeatherElements	[]weatherElement	`xml:"weatherElement"`
 }
+
 type weatherElement struct {
 	XMLName			xml.Name		`xml:"weatherElement"`
 	ElementName		string			`xml:"elementName"`
 	Time			[]dataByTime	`xml:"time"`
 }
+
 type dataByTime struct {
 	XMLName			xml.Name		`xml:"time"`
 	StartTime		string			`xml:"startTime"`
 	EndTime			string			`xml:"EndTime"`
 	Parameter		parameter		`xml:"parameter"`
 }
+
 type parameter struct {
 	XMLName			xml.Name		`xml:"parameter"`
 	Name			string			`xml:"parameterName"`
 	Value			int				`xml:"parameterValue"`
 }
+
 func dataOfLocation(dataset dataset, location string) (*location, error) {
 	for _,data := range dataset.Locations {
 		if data.LocationName == location {
@@ -76,4 +81,7 @@ func main() {
 	fmt.Println(dataOfLocation.LocationName)
 	fmt.Println(dataOfLocation.WeatherElements[0].Time[0].StartTime)
 	fmt.Println(dataOfLocation.WeatherElements[0].Time[0].Parameter.Name)
+
+	resp, _ := GetCityByLatlng(25.057339, 121.56086)
+	fmt.Println(resp)
 }
