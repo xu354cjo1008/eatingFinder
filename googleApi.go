@@ -7,7 +7,7 @@ import (
 )
 
 const GOOGLE_GEOCODE_URL string = "https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&key=%s&language=zh-TW"
-const GOOGLE_API_KEY string = "AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw"
+const GOOGLE_API_KEY string = ""
 
 func httpGet(request string) (string, error){
 	resp, err := http.Get(request)
