@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"os"
 	"errors"
+	"bytes"
+	"strings"
 )
 
 type Recurlyweathers struct {
@@ -44,11 +46,25 @@ type parameter struct {
 }
 
 func dataOfLocation(dataset dataset, location string) (*location, error) {
+	if location == "" {
+		return nil, errors.New("invalid location")
+	}
+
+	var buffer bytes.Buffer
+
+	if string([]rune(location)[0]) == "台" {
+		buffer.WriteRune('臺')
+		buffer.WriteString(strings.Split(location, "台")[1])
+	} else {
+		buffer.WriteString(location)
+	}
+
 	for _,data := range dataset.Locations {
-		if data.LocationName == location {
+		if data.LocationName == buffer.String() {
 			return &data, nil
 		}
 	}
+
 	return nil, errors.New("can not find data for the location")
 }
 
@@ -75,13 +91,25 @@ func parseWeatherXml(filename string) *Recurlyweathers {
 
 func main() {
 
+	city, err := GetCityByLatlng(25.057339, 121.56086)
+
+	if err != nil {
+		 fmt.Println(err)
+		 return
+	}
+
+	fmt.Println(city)
+
 	v := parseWeatherXml("F-C0032-001.xml")
 
-	dataOfLocation, _ := dataOfLocation(v.DataSet, "臺北市")
+	dataOfLocation, err := dataOfLocation(v.DataSet, city)
+
+	if err != nil {
+		 fmt.Println(err)
+		 return
+	}
+
 	fmt.Println(dataOfLocation.LocationName)
 	fmt.Println(dataOfLocation.WeatherElements[0].Time[0].StartTime)
 	fmt.Println(dataOfLocation.WeatherElements[0].Time[0].Parameter.Name)
-
-	resp, _ := GetCityByLatlng(25.057339, 121.56086)
-	fmt.Println(resp)
 }
