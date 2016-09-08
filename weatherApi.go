@@ -8,6 +8,7 @@ import (
 	"errors"
 	"bytes"
 	"strings"
+	"flag"
 )
 
 type Recurlyweathers struct {
@@ -91,7 +92,12 @@ func parseWeatherXml(filename string) *Recurlyweathers {
 
 func main() {
 
-	city, err := GetCityByLatlng(25.057339, 121.56086)
+	latPtr := flag.Float64("lat", 25.057339, "latitude of user position")
+	lntPtr := flag.Float64("lnt", 121.56086, "longtitude of user position")
+
+	flag.Parse()
+
+	city, err := GetCityByLatlng(*latPtr, *lntPtr)
 
 	if err != nil {
 		 fmt.Println(err)
