@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"encoding/json"
+	"errors"
 )
 
 const GOOGLE_GEOCODE_URL string = "https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&key=%s&language=zh-TW"
@@ -40,9 +41,20 @@ func GetCityByLatlng(lat float64, lng float64) (string, error) {
 		panic(err)
     }
 
-	address := dat["results"].([]interface{})[0].(map[string]interface{})
+	result := dat["results"].([]interface{})
+	if (len(result) == 0) {
+		 return "", errors.New("Get zero location result")
+	}
+
+	address := result[0].(map[string]interface{})
+	if (len(address) == 0) {
+		 return "", errors.New("Can not get related address of that location")
+	}
 
     components := address["address_components"].([]interface{})
+	if (len(components) == 0) {
+		 return "", errors.New("Can not get related data components of that address")
+	}
 
 	for _,component := range components {
 		types := component.(map[string]interface{})["types"].([]interface{})
@@ -58,5 +70,12 @@ func GetCityByLatlng(lat float64, lng float64) (string, error) {
 		}
 	}
 
-	return "", nil
+	for _,component := range components {
+		types := component.(map[string]interface{})["types"].([]interface{})
+		if types[0] == "administrative_area_level_3" {
+			return component.(map[string]interface{})["long_name"].(string), nil
+		}
+	}
+
+	return "", errors.New("Can not find related city name")
 }

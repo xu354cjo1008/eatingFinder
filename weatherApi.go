@@ -70,7 +70,7 @@ func dataOfLocation(dataset dataset, location string) (*location, error) {
 }
 
 func parseWeatherXml(filename string) *Recurlyweathers {
-	file, err := os.Open(filename) // For read access.
+	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Printf("error: %v", err)
 		return nil
@@ -100,8 +100,8 @@ func main() {
 	city, err := GetCityByLatlng(*latPtr, *lntPtr)
 
 	if err != nil {
-		 fmt.Println(err)
-		 return
+		fmt.Println("error: ", err)
+		os.Exit(-1)
 	}
 
 	fmt.Println(city)
@@ -111,11 +111,13 @@ func main() {
 	dataOfLocation, err := dataOfLocation(v.DataSet, city)
 
 	if err != nil {
-		 fmt.Println(err)
-		 return
+		 fmt.Println("error: ", err)
+		os.Exit(-1)
 	}
 
 	fmt.Println(dataOfLocation.LocationName)
 	fmt.Println(dataOfLocation.WeatherElements[0].Time[0].StartTime)
 	fmt.Println(dataOfLocation.WeatherElements[0].Time[0].Parameter.Name)
+
+	os.Exit(0)
 }
