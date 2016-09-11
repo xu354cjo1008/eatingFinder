@@ -1,0 +1,2988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cwbopendata xmlns="urn:cwb:gov:tw:cwbcommon:0.1">
+    <identifier >7688466d-ee80-c831-16b6-6e8eb9b41826</identifier>
+    <sender >weather@cwb.gov.tw</sender>
+    <sent >2016-09-09T18:21:08+08:00</sent>
+    <status >Actual</status>
+    <msgType >Issue</msgType>
+    <source >MFC</source>
+    <dataid >C0032-002</dataid>
+    <scope >Public</scope>
+    <dataset >
+        <datasetInfo>
+            <datasetDescription>Thirty-Six Hours Weather Forecast</datasetDescription>
+            <issueTime>2016-09-09T17:00:00+08:00</issueTime>
+            <update>2016-09-09T18:21:08+08:00</update>
+</datasetInfo>
+        <location>
+            <locationName>TAIPEI CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>90</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>NEW TAIPEI CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>27</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>80</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>TAOYUAN CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>31</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>50</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>TAICHUNG CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>27</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>TAINAN CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLEAR</parameterName>
+                        <parameterValue>7</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLEAR</parameterName>
+                        <parameterValue>8</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>10</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>10</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>KAOHSIUNG CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLEAR</parameterName>
+                        <parameterValue>8</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLEAR</parameterName>
+                        <parameterValue>8</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>31</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>27</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>10</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>10</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>KEELUNG CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>31</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>27</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>50</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>HSINCHU COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>HSINCHU CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY</parameterName>
+                        <parameterValue>2</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>31</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>MIAOLI COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>31</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>CHANGHUA COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSHOWERS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY</parameterName>
+                        <parameterValue>2</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>NANTOU COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>80</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>YUNLIN COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY</parameterName>
+                        <parameterValue>2</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>31</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>40</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>CHIAYI COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSHOWERS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLEAR</parameterName>
+                        <parameterValue>7</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>CHIAYI CITY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSHOWERS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>32</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>PINGTUNG COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSHOWERS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLEAR</parameterName>
+                        <parameterValue>8</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>33</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>10</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>YILAN COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY</parameterName>
+                        <parameterValue>5</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>31</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>90</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>HUALIEN COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>80</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>50</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>TAITUNG COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSHOWERS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSHOWERS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSHOWERS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>31</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>PENGHU COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSHOWERS</parameterName>
+                        <parameterValue>17</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>PARTLY CLOUDY</parameterName>
+                        <parameterValue>2</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>20</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>KINMEN COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>MOSTLY CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>30</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>28</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>70</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>80</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>50</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+        <location>
+            <locationName>LIENCHIANG COUNTY</locationName>
+            <weatherElement>
+                <elementName>Wx</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>31</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>CLOUDY WITH OCCASIONAL SHOWERS OR THUNDERSTORMS</parameterName>
+                        <parameterValue>36</parameterValue>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MaxT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>27</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>29</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>27</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>MinT</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>26</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>25</parameterName>
+                        <parameterUnit>C</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>CI</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE~HOT</parameterName>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>COMFORTABLE</parameterName>
+</parameter>
+</time>
+</weatherElement>
+            <weatherElement>
+                <elementName>PoP</elementName>
+                <time>
+                    <startTime>2016-09-09T18:00:00+08:00</startTime>
+                    <endTime>2016-09-10T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>80</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T06:00:00+08:00</startTime>
+                    <endTime>2016-09-10T18:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>80</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+                <time>
+                    <startTime>2016-09-10T18:00:00+08:00</startTime>
+                    <endTime>2016-09-11T06:00:00+08:00</endTime>
+                    <parameter>
+                        <parameterName>80</parameterName>
+                        <parameterUnit>PERCENT</parameterUnit>
+</parameter>
+</time>
+</weatherElement>
+</location>
+</dataset>
+</cwbopendata>

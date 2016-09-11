@@ -1,17 +1,21 @@
+/****************************************************************************
+ * This file is handler of Geocode api processing.                          *
+ *                                                                          *
+ ****************************************************************************/
 package main
 
 import (
+	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"encoding/json"
-	"errors"
 )
 
 const GOOGLE_GEOCODE_URL string = "https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&key=%s&language=zh-TW"
 const GOOGLE_API_KEY string = ""
 
-func httpGet(request string) ([]byte, error){
+func httpGet(request string) ([]byte, error) {
 	resp, err := http.Get(request)
 	if err != nil {
 		fmt.Println("http.get failed")
@@ -28,49 +32,43 @@ func httpGet(request string) ([]byte, error){
 	return body, nil
 }
 
-func GetCityByLatlng(lat float64, lng float64) (string, error) {
-	reqUrl := fmt.Sprintf(GOOGLE_GEOCODE_URL, lat, lng, GOOGLE_API_KEY)
-	resp, err := httpGet(reqUrl)
-	if err != nil {
-		fmt.Printf("error: %v", err)
-		return "", err
-	}
+/*
+* Parse geocode api return result
+* The example geocode result is at geocodeReturnExample file
+ */
+func parseGeocodeResult(geoRes map[string]interface{}) (string, error) {
 
-	var dat map[string]interface{}
-	if err := json.Unmarshal(resp, &dat); err != nil {
-		panic(err)
-    }
-
-	result := dat["results"].([]interface{})
-	if (len(result) == 0) {
-		 return "", errors.New("Get zero location result")
+	result := geoRes["results"].([]interface{})
+	if len(result) == 0 {
+		return "", errors.New("Get zero location result")
 	}
 
 	address := result[0].(map[string]interface{})
-	if (len(address) == 0) {
-		 return "", errors.New("Can not get related address of that location")
+	if len(address) == 0 {
+		return "", errors.New("Can not get related address of that location")
 	}
 
-    components := address["address_components"].([]interface{})
-	if (len(components) == 0) {
-		 return "", errors.New("Can not get related data components of that address")
+	components := address["address_components"].([]interface{})
+	if len(components) == 0 {
+		return "", errors.New("Can not get related data components of that address")
 	}
 
-	for _,component := range components {
+	// Try to get city name with highest administrative area level
+	for _, component := range components {
 		types := component.(map[string]interface{})["types"].([]interface{})
 		if types[0] == "administrative_area_level_1" {
 			return component.(map[string]interface{})["long_name"].(string), nil
 		}
 	}
 
-	for _,component := range components {
+	for _, component := range components {
 		types := component.(map[string]interface{})["types"].([]interface{})
 		if types[0] == "administrative_area_level_2" {
 			return component.(map[string]interface{})["long_name"].(string), nil
 		}
 	}
 
-	for _,component := range components {
+	for _, component := range components {
 		types := component.(map[string]interface{})["types"].([]interface{})
 		if types[0] == "administrative_area_level_3" {
 			return component.(map[string]interface{})["long_name"].(string), nil
@@ -78,4 +76,36 @@ func GetCityByLatlng(lat float64, lng float64) (string, error) {
 	}
 
 	return "", errors.New("Can not find related city name")
+
+}
+
+/**
+* @name GetCityByLatlng
+* @brief Get city name by latitude and longtitude
+* @param lat Latitude
+* @param lng Longtitude
+* @return string City name
+* @return error Error description, this will be nil if no error occurs
+ */
+func GetCityByLatlng(lat float64, lng float64) (string, error) {
+
+	reqUrl := fmt.Sprintf(GOOGLE_GEOCODE_URL, lat, lng, GOOGLE_API_KEY)
+	resp, err := httpGet(reqUrl)
+	if err != nil {
+		fmt.Printf("error: %v", err)
+		return "", err
+	}
+
+	var geoRes map[string]interface{}
+	if err := json.Unmarshal(resp, &geoRes); err != nil {
+		panic(err)
+	}
+
+	var city string = ""
+	city, err = parseGeocodeResult(geoRes)
+	if err != nil {
+		return "", errors.New("Can not find related city name")
+	} else {
+		return city, nil
+	}
 }

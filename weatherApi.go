@@ -1,58 +1,75 @@
+/****************************************************************************
+ * This file is xml parser for the data from Central Weather Bureau.        *
+ *                                                                          *
+ ****************************************************************************/
 package main
 
 import (
+	"bytes"
 	"encoding/xml"
+	"errors"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
-	"errors"
-	"bytes"
 	"strings"
-	"flag"
 )
 
-type Recurlyweathers struct {
-	XMLName		xml.Name	`xml:"cwbopendata"`
-	DataSet		dataset		`xml:"dataset"`
+/*
+* The xml structure of weather information from Central Weather Bureau
+* The example xml file is in F-C0032-001.xml and F-C0032-002.xml
+ */
+type Weathers struct {
+	XMLName xml.Name `xml:"cwbopendata"`
+	DataSet dataset  `xml:"dataset"`
 }
 
 type dataset struct {
-	XMLName		xml.Name	`xml:"dataset"`
-	Locations	[]location	`xml:"location"`
+	XMLName   xml.Name   `xml:"dataset"`
+	Locations []location `xml:"location"`
 }
 
 type location struct {
-	XMLName         xml.Name			`xml:"location"`
-	LocationName    string				`xml:"locationName"`
-	WeatherElements	[]weatherElement	`xml:"weatherElement"`
+	XMLName         xml.Name         `xml:"location"`
+	LocationName    string           `xml:"locationName"`
+	WeatherElements []weatherElement `xml:"weatherElement"`
 }
 
 type weatherElement struct {
-	XMLName			xml.Name		`xml:"weatherElement"`
-	ElementName		string			`xml:"elementName"`
-	Time			[]dataByTime	`xml:"time"`
+	XMLName     xml.Name     `xml:"weatherElement"`
+	ElementName string       `xml:"elementName"`
+	Time        []dataByTime `xml:"time"`
 }
 
 type dataByTime struct {
-	XMLName			xml.Name		`xml:"time"`
-	StartTime		string			`xml:"startTime"`
-	EndTime			string			`xml:"EndTime"`
-	Parameter		parameter		`xml:"parameter"`
+	XMLName   xml.Name  `xml:"time"`
+	StartTime string    `xml:"startTime"`
+	EndTime   string    `xml:"EndTime"`
+	Parameter parameter `xml:"parameter"`
 }
 
 type parameter struct {
-	XMLName			xml.Name		`xml:"parameter"`
-	Name			string			`xml:"parameterName"`
-	Value			int				`xml:"parameterValue"`
+	XMLName xml.Name `xml:"parameter"`
+	Name    string   `xml:"parameterName"`
+	Value   int      `xml:"parameterValue"`
 }
 
-func dataOfLocation(dataset dataset, location string) (*location, error) {
+/*
+* @name DataOfLocation
+* @briefFind weather information from related location
+* @param dataset The dataset struct from xml
+* @param location The location we care about
+* @return *location The pointer of location data from xml
+* @return error The Error description, this will be nil if no error occurs
+ */
+func DataOfLocation(dataset dataset, location string) (*location, error) {
 	if location == "" {
 		return nil, errors.New("invalid location")
 	}
 
 	var buffer bytes.Buffer
 
+	// This is a workround to match 台 and 臺
 	if string([]rune(location)[0]) == "台" {
 		buffer.WriteRune('臺')
 		buffer.WriteString(strings.Split(location, "台")[1])
@@ -60,7 +77,7 @@ func dataOfLocation(dataset dataset, location string) (*location, error) {
 		buffer.WriteString(location)
 	}
 
-	for _,data := range dataset.Locations {
+	for _, data := range dataset.Locations {
 		if data.LocationName == buffer.String() {
 			return &data, nil
 		}
@@ -69,7 +86,11 @@ func dataOfLocation(dataset dataset, location string) (*location, error) {
 	return nil, errors.New("can not find data for the location")
 }
 
-func parseWeatherXml(filename string) *Recurlyweathers {
+/*
+* Parsing weather information from Central Weather Bureau
+* The example xml file is in F-C0032-001.xml and F-C0032-002.xml
+ */
+func parseWeatherXml(filename string) *Weathers {
 	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Printf("error: %v", err)
@@ -81,7 +102,7 @@ func parseWeatherXml(filename string) *Recurlyweathers {
 		fmt.Printf("error: %v", err)
 		return nil
 	}
-	v := Recurlyweathers{}
+	v := Weathers{}
 	err = xml.Unmarshal(data, &v)
 	if err != nil {
 		fmt.Printf("error: %v", err)
@@ -90,6 +111,10 @@ func parseWeatherXml(filename string) *Recurlyweathers {
 	return &v
 }
 
+/*
+* This is the main just for test
+* We need to write another unit test program to do this
+ */
 func main() {
 
 	latPtr := flag.Float64("lat", 25.057339, "latitude of user position")
@@ -108,10 +133,10 @@ func main() {
 
 	v := parseWeatherXml("F-C0032-001.xml")
 
-	dataOfLocation, err := dataOfLocation(v.DataSet, city)
+	dataOfLocation, err := DataOfLocation(v.DataSet, city)
 
 	if err != nil {
-		 fmt.Println("error: ", err)
+		fmt.Println("error: ", err)
 		os.Exit(-1)
 	}
 
