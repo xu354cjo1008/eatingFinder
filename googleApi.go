@@ -12,7 +12,7 @@ import (
 	"net/http"
 )
 
-const GOOGLE_GEOCODE_URL string = "https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&key=%s&language=zh-TW"
+const GOOGLE_GEOCODE_URL string = "https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&key=%s&language=en"
 const GOOGLE_API_KEY string = ""
 
 func httpGet(request string) ([]byte, error) {

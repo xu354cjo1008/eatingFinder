@@ -78,7 +78,7 @@ func DataOfLocation(dataset dataset, location string) (*location, error) {
 	}
 
 	for _, data := range dataset.Locations {
-		if data.LocationName == buffer.String() {
+		if strings.ToLower(data.LocationName) == strings.ToLower(buffer.String()) {
 			return &data, nil
 		}
 	}
@@ -131,8 +131,10 @@ func main() {
 
 	fmt.Println(city)
 
-	v := parseWeatherXml("F-C0032-001.xml")
+	v := parseWeatherXml("F-C0032-002.xml")
 
+	fmt.Println(city)
+	fmt.Println(v)
 	dataOfLocation, err := DataOfLocation(v.DataSet, city)
 
 	if err != nil {
