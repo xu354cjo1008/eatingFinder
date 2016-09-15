@@ -133,8 +133,6 @@ func main() {
 
 	v := parseWeatherXml("F-C0032-002.xml")
 
-	fmt.Println(city)
-	fmt.Println(v)
 	dataOfLocation, err := DataOfLocation(v.DataSet, city)
 
 	if err != nil {
