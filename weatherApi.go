@@ -15,9 +15,9 @@ import (
 	"strings"
 )
 
-/*
-* The xml structure of weather information from Central Weather Bureau
-* The example xml file is in F-C0032-001.xml and F-C0032-002.xml
+/**
+ * The xml structure of weather information from Central Weather Bureau
+ * The example xml file is in F-C0032-001.xml and F-C0032-002.xml
  */
 type Weathers struct {
 	XMLName xml.Name `xml:"cwbopendata"`
@@ -54,13 +54,13 @@ type parameter struct {
 	Value   int      `xml:"parameterValue"`
 }
 
-/*
-* @name DataOfLocation
-* @briefFind weather information from related location
-* @param dataset The dataset struct from xml
-* @param location The location we care about
-* @return *location The pointer of location data from xml
-* @return error The Error description, this will be nil if no error occurs
+/**
+ * @name DataOfLocation
+ * @briefFind weather information from related location
+ * @param dataset The dataset struct from xml
+ * @param location The location we care about
+ * @return *location The pointer of location data from xml
+ * @return error The Error description, this will be nil if no error occurs
  */
 func DataOfLocation(dataset dataset, location string) (*location, error) {
 	if location == "" {
@@ -86,9 +86,9 @@ func DataOfLocation(dataset dataset, location string) (*location, error) {
 	return nil, errors.New("can not find data for the location")
 }
 
-/*
-* Parsing weather information from Central Weather Bureau
-* The example xml file is in F-C0032-001.xml and F-C0032-002.xml
+/**
+ * Parsing weather information from Central Weather Bureau
+ * The example xml file is in F-C0032-001.xml and F-C0032-002.xml
  */
 func parseWeatherXml(filename string) *Weathers {
 	file, err := os.Open(filename)
@@ -111,9 +111,9 @@ func parseWeatherXml(filename string) *Weathers {
 	return &v
 }
 
-/*
-* This is the main just for test
-* We need to write another unit test program to do this
+/**
+ * This is the main just for test
+ * We need to write another unit test program to do this
  */
 func main() {
 

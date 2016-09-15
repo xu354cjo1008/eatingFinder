@@ -32,9 +32,9 @@ func httpGet(request string) ([]byte, error) {
 	return body, nil
 }
 
-/*
-* Parse geocode api return result
-* The example geocode result is at geocodeReturnExample file
+/**
+ * Parse geocode api return result
+ * The example geocode result is at geocodeReturnExample file
  */
 func parseGeocodeResult(geoRes map[string]interface{}) (string, error) {
 
@@ -80,12 +80,12 @@ func parseGeocodeResult(geoRes map[string]interface{}) (string, error) {
 }
 
 /**
-* @name GetCityByLatlng
-* @brief Get city name by latitude and longtitude
-* @param lat Latitude
-* @param lng Longtitude
-* @return string City name
-* @return error Error description, this will be nil if no error occurs
+ * @name GetCityByLatlng
+ * @brief Get city name by latitude and longtitude
+ * @param lat Latitude
+ * @param lng Longtitude
+ * @return string City name
+ * @return error Error description, this will be nil if no error occurs
  */
 func GetCityByLatlng(lat float64, lng float64) (string, error) {
 

@@ -1,3 +1,7 @@
+/****************************************************************************
+ * The unit tester for weather go package                          .        *
+ *                                                                          *
+ ****************************************************************************/
 package main
 
 import (
@@ -10,6 +14,12 @@ type locationTestCase struct {
 	expect string
 }
 
+/**
+ * Test job for geocode api function
+ * Input: latitude, longtitude
+ * Output: expected city name
+ * Add test case into testCases array if needed
+ */
 func TestLocation(t *testing.T) {
 	testCases := []locationTestCase{
 		locationTestCase{lat: 25.053257, lng: 121.539702, expect: "台北市"},
@@ -39,3 +49,7 @@ func TestLocation(t *testing.T) {
 		}
 	}
 }
+
+/**
+ * Test job for weather information parser
+ */
