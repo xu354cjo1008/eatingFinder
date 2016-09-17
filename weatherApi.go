@@ -90,7 +90,7 @@ func DataOfLocation(dataset dataset, location string) (*location, error) {
  * Parsing weather information from Central Weather Bureau
  * The example xml file is in F-C0032-001.xml and F-C0032-002.xml
  */
-func parseWeatherXml(filename string) *Weathers {
+func ParseWeatherXml(filename string) *Weathers {
 	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Printf("error: %v", err)
@@ -131,7 +131,7 @@ func main() {
 
 	fmt.Println(city)
 
-	v := parseWeatherXml("F-C0032-002.xml")
+	v := ParseWeatherXml("F-C0032-002.xml")
 
 	dataOfLocation, err := DataOfLocation(v.DataSet, city)
 

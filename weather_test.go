@@ -14,6 +14,12 @@ type locationTestCase struct {
 	expect string
 }
 
+type weatherTestCase struct {
+	file     string
+	location string
+	expect   string
+}
+
 /**
  * Test job for geocode api function
  * Input: latitude, longtitude
@@ -54,3 +60,33 @@ func TestLocation(t *testing.T) {
 /**
  * Test job for weather information parser
  */
+func TestWeatherApi(t *testing.T) {
+	testCases := []weatherTestCase{
+		weatherTestCase{file: "F-C0032-002.xml", location: "Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
+		weatherTestCase{file: "F-C0032-002.xml", location: "New Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
+		weatherTestCase{file: "F-C0032-002.xml", location: "Taoyuan City", expect: "CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
+	}
+	for index, testCase := range testCases {
+		weatherData := ParseWeatherXml(testCase.file)
+		dataOfLocation, err := DataOfLocation(weatherData.DataSet, testCase.location)
+		if dataOfLocation.WeatherElements[0].Time[0].Parameter.Name != testCase.expect || err != nil {
+			t.Error(
+				"#", index,
+				"xml file", testCase.file,
+				"location", testCase.location,
+				"Expected", testCase.expect,
+				"Got", dataOfLocation.WeatherElements[0].Time[0].Parameter.Name,
+				"Failed",
+			)
+		} else {
+			t.Log(
+				"#", index,
+				"xml file", testCase.file,
+				"location", testCase.location,
+				"Expected", testCase.expect,
+				"Got", dataOfLocation.WeatherElements[0].Time[0].Parameter.Name,
+				"Pass",
+			)
+		}
+	}
+}
