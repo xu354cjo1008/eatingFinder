@@ -15,7 +15,6 @@ type locationTestCase struct {
 }
 
 type weatherTestCase struct {
-	file     string
 	location string
 	expect   string
 }
@@ -62,17 +61,22 @@ func TestLocation(t *testing.T) {
  */
 func TestWeatherApi(t *testing.T) {
 	testCases := []weatherTestCase{
-		weatherTestCase{file: "F-C0032-002.xml", location: "Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
-		weatherTestCase{file: "F-C0032-002.xml", location: "New Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
-		weatherTestCase{file: "F-C0032-002.xml", location: "Taoyuan City", expect: "CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
+		weatherTestCase{location: "Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
+		weatherTestCase{location: "New Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
+		weatherTestCase{location: "Taoyuan City", expect: "CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
+	}
+	weatherData, err := ParseWeatherXml()
+	if err != nil {
+		t.Error(
+			"Failed to parse weather xml",
+		)
+		return
 	}
 	for index, testCase := range testCases {
-		weatherData := ParseWeatherXml(testCase.file)
 		dataOfLocation, err := DataOfLocation(weatherData.DataSet, testCase.location)
 		if dataOfLocation.WeatherElements[0].Time[0].Parameter.Name != testCase.expect || err != nil {
 			t.Error(
 				"#", index,
-				"xml file", testCase.file,
 				"location", testCase.location,
 				"Expected", testCase.expect,
 				"Got", dataOfLocation.WeatherElements[0].Time[0].Parameter.Name,
@@ -81,7 +85,6 @@ func TestWeatherApi(t *testing.T) {
 		} else {
 			t.Log(
 				"#", index,
-				"xml file", testCase.file,
 				"location", testCase.location,
 				"Expected", testCase.expect,
 				"Got", dataOfLocation.WeatherElements[0].Time[0].Parameter.Name,

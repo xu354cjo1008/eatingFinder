@@ -11,8 +11,15 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
+	"net/http"
 	"os"
 	"strings"
+)
+
+const (
+	CENTRAL_WEATHER_BUREAU_URL       string = "http://opendata.cwb.gov.tw/opendataapi?dataid=%s&authorizationkey=%s"
+	CENTRAL_WEATHER_BUREAU_DATA_ID_1 string = "F-C0032-002"
+	CENTRAL_WEATHER_BUREAU_KEY       string = ""
 )
 
 /**
@@ -55,6 +62,27 @@ type parameter struct {
 }
 
 /**
+ * Same as httpGet function in googleApi.go
+ * Maybe we can manage http function in one package
+ */
+func httpGetWeather(request string) ([]byte, error) {
+	resp, err := http.Get(request)
+	if err != nil {
+		fmt.Println("http.get failed")
+		return nil, err
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("read http response failed")
+		return nil, err
+	}
+
+	return body, nil
+}
+
+/**
  * @name DataOfLocation
  * @briefFind weather information from related location
  * @param dataset The dataset struct from xml
@@ -90,25 +118,22 @@ func DataOfLocation(dataset dataset, location string) (*location, error) {
  * Parsing weather information from Central Weather Bureau
  * The example xml file is in F-C0032-001.xml and F-C0032-002.xml
  */
-func ParseWeatherXml(filename string) *Weathers {
-	file, err := os.Open(filename)
+func ParseWeatherXml() (*Weathers, error) {
+
+	reqUrl := fmt.Sprintf(CENTRAL_WEATHER_BUREAU_URL, CENTRAL_WEATHER_BUREAU_DATA_ID_1, CENTRAL_WEATHER_BUREAU_KEY)
+	resp, err := httpGetWeather(reqUrl)
 	if err != nil {
 		fmt.Printf("error: %v", err)
-		return nil
+		return nil, err
 	}
-	defer file.Close()
-	data, err := ioutil.ReadAll(file)
-	if err != nil {
-		fmt.Printf("error: %v", err)
-		return nil
-	}
+
 	v := Weathers{}
-	err = xml.Unmarshal(data, &v)
+	err = xml.Unmarshal(resp, &v)
 	if err != nil {
 		fmt.Printf("error: %v", err)
-		return nil
+		return nil, err
 	}
-	return &v
+	return &v, nil
 }
 
 /**
@@ -131,7 +156,11 @@ func main() {
 
 	fmt.Println(city)
 
-	v := ParseWeatherXml("F-C0032-002.xml")
+	v, err := ParseWeatherXml()
+	if err != nil {
+		fmt.Println("error: ", err)
+		os.Exit(-1)
+	}
 
 	dataOfLocation, err := DataOfLocation(v.DataSet, city)
 
