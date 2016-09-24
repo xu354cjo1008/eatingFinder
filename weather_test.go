@@ -34,7 +34,7 @@ func TestLocation(t *testing.T) {
 		locationTestCase{lat: 25.129331, lng: 121.739967, expect: "Keelung City"},
 	}
 	for index, testCase := range testCases {
-		if res, err := GetCityByLatlng(testCase.lat, testCase.lng); res != testCase.expect || err != nil {
+		if res, err := GetCityByLatlng(testCase.lat, testCase.lng, "en"); res != testCase.expect || err != nil {
 			t.Error(
 				"#", index,
 				"For latitude", testCase.lat,

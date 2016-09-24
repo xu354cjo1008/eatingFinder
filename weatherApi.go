@@ -19,7 +19,7 @@ import (
 const (
 	CENTRAL_WEATHER_BUREAU_URL       string = "http://opendata.cwb.gov.tw/opendataapi?dataid=%s&authorizationkey=%s"
 	CENTRAL_WEATHER_BUREAU_DATA_ID_1 string = "F-C0032-002"
-	CENTRAL_WEATHER_BUREAU_KEY       string = ""
+	CENTRAL_WEATHER_BUREAU_KEY       string = "CWB-2FC70596-59B4-4CC5-98E5-BCC6490E30DD"
 )
 
 /**
@@ -65,7 +65,7 @@ type parameter struct {
  * Same as httpGet function in googleApi.go
  * Maybe we can manage http function in one package
  */
-func httpGetWeather(request string) ([]byte, error) {
+func httpGet(request string) ([]byte, error) {
 	resp, err := http.Get(request)
 	if err != nil {
 		fmt.Println("http.get failed")
@@ -121,7 +121,7 @@ func DataOfLocation(dataset dataset, location string) (*location, error) {
 func ParseWeatherXml() (*Weathers, error) {
 
 	reqUrl := fmt.Sprintf(CENTRAL_WEATHER_BUREAU_URL, CENTRAL_WEATHER_BUREAU_DATA_ID_1, CENTRAL_WEATHER_BUREAU_KEY)
-	resp, err := httpGetWeather(reqUrl)
+	resp, err := httpGet(reqUrl)
 	if err != nil {
 		fmt.Printf("error: %v", err)
 		return nil, err
@@ -147,7 +147,7 @@ func main() {
 
 	flag.Parse()
 
-	city, err := GetCityByLatlng(*latPtr, *lntPtr)
+	city, err := GetCityByLatlng(*latPtr, *lntPtr, "en")
 
 	if err != nil {
 		fmt.Println("error: ", err)
