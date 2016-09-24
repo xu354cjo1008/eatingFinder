@@ -15,14 +15,13 @@ import (
 	"googlemaps.github.io/maps"
 )
 
-const GOOGLE_API_KEY string = "AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw"
 const GOOGLE_GEOCODE_URL string = "https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&key=%s&language=%s"
 
 /**
  * Interface of geocode api
  */
 type googleMapGeocode interface {
-	request() error
+	request(float64, float64) error
 	getCity() (string, error)
 }
 
@@ -30,20 +29,23 @@ type googleMapGeocode interface {
  * Class to handle direct access google geocode api
  */
 type directGeo struct {
-	requestContext string
-	response       map[string]interface{}
+	response     map[string]interface{}
+	googleApiKey string
+	language     string
 }
 
 /**
  * Request google geocode api and store response to struct
  */
-func (geo *directGeo) request() error {
+func (geo *directGeo) request(lat float64, lng float64) error {
 
-	if geo.requestContext == "" {
-		return errors.New("Invalid request context")
+	if geo.googleApiKey == "" {
+		return errors.New("Invalid google api key")
 	}
 
-	resp, err := http.Get(geo.requestContext)
+	reqUrl := fmt.Sprintf(GOOGLE_GEOCODE_URL, lat, lng, geo.googleApiKey, geo.language)
+
+	resp, err := http.Get(reqUrl)
 	if err != nil {
 		return err
 	}
@@ -117,11 +119,11 @@ func (geo *directGeo) getCity() (string, error) {
 /**
  * Contructure of direct geocode class
  */
-func newDirectGeo(lat float64, lng float64, language string) *directGeo {
-	reqUrl := fmt.Sprintf(GOOGLE_GEOCODE_URL, lat, lng, GOOGLE_API_KEY, language)
+func newDirectGeo(googleApiKey string, language string) *directGeo {
 
 	directGeo := directGeo{
-		requestContext: reqUrl,
+		googleApiKey: googleApiKey,
+		language:     language,
 	}
 
 	return &directGeo
@@ -131,21 +133,22 @@ func newDirectGeo(lat float64, lng float64, language string) *directGeo {
  * Class to handle google geocode api provide by https://github.com/googlemaps/google-maps-services-go
  */
 type mapGeo struct {
-	client         *maps.Client
-	requestContext *maps.GeocodingRequest
-	response       []maps.GeocodingResult
+	client   *maps.Client
+	response []maps.GeocodingResult
+	language string
 }
 
 /**
  * Request google google map geocode api and store response to struct
  */
-func (m *mapGeo) request() error {
+func (m *mapGeo) request(lat float64, lng float64) error {
 
-	if m.requestContext == nil {
-		return errors.New("invalid google map geocoding request")
+	req := &maps.GeocodingRequest{
+		LatLng:   &maps.LatLng{Lat: lat, Lng: lng},
+		Language: m.language,
 	}
 
-	resp, err := m.client.ReverseGeocode(context.Background(), m.requestContext)
+	resp, err := m.client.ReverseGeocode(context.Background(), req)
 	if err != nil {
 		return err
 	}
@@ -164,12 +167,8 @@ func (mapGeo *mapGeo) getCity() (string, error) {
 	if len(mapGeo.response) == 0 {
 		return "", errors.New("Can not get related address of that location")
 	}
-	for _, geocodingRes := range mapGeo.response {
-		if geocodingRes.Types[0] == "street_address" {
-			components = geocodingRes.AddressComponents
-			break
-		}
-	}
+
+	components = mapGeo.response[0].AddressComponents
 
 	if components == nil || len(components) == 0 {
 		return "", errors.New("Can not get related address information")
@@ -200,23 +199,26 @@ func (mapGeo *mapGeo) getCity() (string, error) {
 /**
  * Contructure of https://github.com/googlemaps/google-maps-services-go geocode class
  */
-func newMapGeo(lat float64, lng float64, language string) *mapGeo {
-	client, err := maps.NewClient(maps.WithAPIKey(GOOGLE_API_KEY))
+func newMapGeo(googleApiKey string, language string) *mapGeo {
+
+	client, err := maps.NewClient(maps.WithAPIKey(googleApiKey))
 
 	if err != nil {
 		return nil
 	}
-	req := &maps.GeocodingRequest{
-		LatLng:   &maps.LatLng{Lat: lat, Lng: lng},
-		Language: language,
-	}
 
 	mapGeo := mapGeo{
-		client:         client,
-		requestContext: req,
+		client:   client,
+		language: language,
 	}
 
 	return &mapGeo
+}
+
+type Geocode struct {
+	geoHandler   googleMapGeocode
+	googleApiKey string
+	language     string
 }
 
 /**
@@ -227,22 +229,29 @@ func newMapGeo(lat float64, lng float64, language string) *mapGeo {
  * @return string City name
  * @return error Error description, this will be nil if no error occurs
  */
-func GetCityByLatlng(lat float64, lng float64, language string) (string, error) {
+func (geo *Geocode) GetCityByLatlng(lat float64, lng float64) (string, error) {
 
-	var geo googleMapGeocode
-
-	geo = newMapGeo(lat, lng, language)
-
-	err := geo.request()
+	err := geo.geoHandler.request(lat, lng)
 	if err != nil {
 		return "", err
 	}
 
 	var city string = ""
-	city, err = geo.getCity()
+	city, err = geo.geoHandler.getCity()
 	if err != nil {
 		return "", err
 	}
 
 	return city, nil
+}
+
+func NewGeocode(googleApiKey string, language string) *Geocode {
+
+	geo := Geocode{
+		geoHandler:   newMapGeo(googleApiKey, language),
+		googleApiKey: googleApiKey,
+		language:     language,
+	}
+
+	return &geo
 }

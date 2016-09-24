@@ -147,7 +147,9 @@ func main() {
 
 	flag.Parse()
 
-	city, err := GetCityByLatlng(*latPtr, *lntPtr, "en")
+	geocode := NewGeocode("AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw", "en")
+
+	city, err := geocode.GetCityByLatlng(*latPtr, *lntPtr)
 
 	if err != nil {
 		fmt.Println("error: ", err)

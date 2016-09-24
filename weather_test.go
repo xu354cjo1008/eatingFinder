@@ -8,6 +8,8 @@ import (
 	"testing"
 )
 
+const GOOGLE_API_KEY string = "AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw"
+
 type locationTestCase struct {
 	lat    float64
 	lng    float64
@@ -33,8 +35,11 @@ func TestLocation(t *testing.T) {
 		locationTestCase{lat: 23.569817, lng: 119.640066, expect: "Penghu County"},
 		locationTestCase{lat: 25.129331, lng: 121.739967, expect: "Keelung City"},
 	}
+
+	geocode := NewGeocode(GOOGLE_API_KEY, "en")
+
 	for index, testCase := range testCases {
-		if res, err := GetCityByLatlng(testCase.lat, testCase.lng, "en"); res != testCase.expect || err != nil {
+		if res, err := geocode.GetCityByLatlng(testCase.lat, testCase.lng); res != testCase.expect || err != nil {
 			t.Error(
 				"#", index,
 				"For latitude", testCase.lat,
