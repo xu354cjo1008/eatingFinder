@@ -121,12 +121,12 @@ func (geo *directGeo) getCity() (string, error) {
  */
 func newDirectGeo(googleApiKey string, language string) *directGeo {
 
-	directGeo := directGeo{
+	geo := directGeo{
 		googleApiKey: googleApiKey,
 		language:     language,
 	}
 
-	return &directGeo
+	return &geo
 }
 
 /**
@@ -141,19 +141,19 @@ type mapGeo struct {
 /**
  * Request google google map geocode api and store response to struct
  */
-func (m *mapGeo) request(lat float64, lng float64) error {
+func (geo *mapGeo) request(lat float64, lng float64) error {
 
 	req := &maps.GeocodingRequest{
 		LatLng:   &maps.LatLng{Lat: lat, Lng: lng},
-		Language: m.language,
+		Language: geo.language,
 	}
 
-	resp, err := m.client.ReverseGeocode(context.Background(), req)
+	resp, err := geo.client.ReverseGeocode(context.Background(), req)
 	if err != nil {
 		return err
 	}
 
-	m.response = resp
+	geo.response = resp
 
 	return nil
 }
@@ -161,14 +161,14 @@ func (m *mapGeo) request(lat float64, lng float64) error {
 /**
  * Parse googlemap.map geocode return result
  */
-func (mapGeo *mapGeo) getCity() (string, error) {
+func (geo *mapGeo) getCity() (string, error) {
 
 	var components []maps.AddressComponent
-	if len(mapGeo.response) == 0 {
+	if len(geo.response) == 0 {
 		return "", errors.New("Can not get related address of that location")
 	}
 
-	components = mapGeo.response[0].AddressComponents
+	components = geo.response[0].AddressComponents
 
 	if components == nil || len(components) == 0 {
 		return "", errors.New("Can not get related address information")
@@ -207,12 +207,12 @@ func newMapGeo(googleApiKey string, language string) *mapGeo {
 		return nil
 	}
 
-	mapGeo := mapGeo{
+	geo := mapGeo{
 		client:   client,
 		language: language,
 	}
 
-	return &mapGeo
+	return &geo
 }
 
 type Geocode struct {
@@ -245,6 +245,13 @@ func (geo *Geocode) GetCityByLatlng(lat float64, lng float64) (string, error) {
 	return city, nil
 }
 
+/**
+ * @name NewGeoCode
+ * @brief Create a geocode instance
+ * @param googleApiKey google map api key
+ * @param language language e.g. en, zh-TW
+ * @return Geocode instance
+ */
 func NewGeocode(googleApiKey string, language string) *Geocode {
 
 	geo := Geocode{
