@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/xu354cjo1008/weatherGo/googleApi/geocoding"
+	"github.com/xu354cjo1008/weatherGo/geography/geocoding"
 	"github.com/xu354cjo1008/weatherGo/meteorological"
 )
 

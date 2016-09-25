@@ -5,8 +5,9 @@
 package meteorological
 
 import (
-	"github.com/xu354cjo1008/weatherGo/googleApi/geocoding"
 	"testing"
+
+	"github.com/xu354cjo1008/weatherGo/geography/geocoding"
 )
 
 const GOOGLE_API_KEY string = "AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw"
