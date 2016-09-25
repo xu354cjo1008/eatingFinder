@@ -9,7 +9,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"github.com/xu354cjo1008/weatherGo/http"
+	"github.com/xu354cjo1008/weatherGo/httpHandler"
 	"strings"
 )
 
