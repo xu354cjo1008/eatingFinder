@@ -1,8 +1,8 @@
 /****************************************************************************
- * The unit tester for weather go package                          .        *
+ * The unit tester for meteorological go package                          .        *
  *                                                                          *
  ****************************************************************************/
-package main
+package meteorological
 
 import (
 	"testing"
