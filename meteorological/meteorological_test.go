@@ -5,6 +5,7 @@
 package meteorological
 
 import (
+	"github.com/xu354cjo1008/weatherGo/googleApi/geocoding"
 	"testing"
 )
 
@@ -36,7 +37,7 @@ func TestLocation(t *testing.T) {
 		locationTestCase{lat: 25.129331, lng: 121.739967, expect: "Keelung City"},
 	}
 
-	geocode := NewGeocode(GOOGLE_API_KEY, "en")
+	geocode := geocoding.NewGeocode(GOOGLE_API_KEY, "en")
 
 	for index, testCase := range testCases {
 		if res, err := geocode.GetCityByLatlng(testCase.lat, testCase.lng); res != testCase.expect || err != nil {
