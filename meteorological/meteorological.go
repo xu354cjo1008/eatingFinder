@@ -96,7 +96,7 @@ func DataOfLocation(dataset dataset, location string) (*location, error) {
  */
 func ParseWeatherXml() (*Weathers, error) {
 	reqUrl := fmt.Sprintf(CENTRAL_WEATHER_BUREAU_URL, CENTRAL_WEATHER_BUREAU_DATA_ID_1, CENTRAL_WEATHER_BUREAU_KEY)
-	resp, err := HttpGet(reqUrl)
+	resp, err := httpHandler.HttpGet(reqUrl)
 	if err != nil {
 		return nil, err
 	}

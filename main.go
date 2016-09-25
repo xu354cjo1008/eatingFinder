@@ -20,7 +20,7 @@ func main() {
 
 	flag.Parse()
 
-	geocode := NewGeocode("AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw", "en")
+	geocode := geocoding.NewGeocode("AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw", "en")
 
 	city, err := geocode.GetCityByLatlng(*latPtr, *lntPtr)
 
@@ -31,13 +31,13 @@ func main() {
 
 	fmt.Println(city)
 
-	v, err := ParseWeatherXml()
+	v, err := meteorological.ParseWeatherXml()
 	if err != nil {
 		fmt.Println("error: ", err)
 		os.Exit(-1)
 	}
 
-	dataOfLocation, err := DataOfLocation(v.DataSet, city)
+	dataOfLocation, err := meteorological.DataOfLocation(v.DataSet, city)
 
 	if err != nil {
 		fmt.Println("error: ", err)
