@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/xu354cjo1008/weatherGo/geography/geocoding"
-	"github.com/xu354cjo1008/weatherGo/meteorological"
+	"github.com/xu354cjo1008/eatingFinder/geography/geocoding"
+	"github.com/xu354cjo1008/eatingFinder/meteorology"
 )
 
 /**

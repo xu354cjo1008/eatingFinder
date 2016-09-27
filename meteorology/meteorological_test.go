@@ -7,7 +7,7 @@ package meteorological
 import (
 	"testing"
 
-	"github.com/xu354cjo1008/weatherGo/geography/geocoding"
+	"github.com/xu354cjo1008/eatingFinder/geography/geocoding"
 )
 
 const GOOGLE_API_KEY string = "AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw"
