@@ -2,15 +2,16 @@
  * This file is xml parser for the data from Central Weather Bureau.        *
  *                                                                          *
  ****************************************************************************/
-package meteorological
+package meteorology
 
 import (
 	"bytes"
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"github.com/xu354cjo1008/weatherGo/httpHandler"
 	"strings"
+
+	"github.com/xu354cjo1008/eatingFinder/httpHandler"
 )
 
 const (

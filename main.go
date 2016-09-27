@@ -31,13 +31,13 @@ func main() {
 
 	fmt.Println(city)
 
-	v, err := meteorological.ParseWeatherXml()
+	v, err := meteorology.ParseWeatherXml()
 	if err != nil {
 		fmt.Println("error: ", err)
 		os.Exit(-1)
 	}
 
-	dataOfLocation, err := meteorological.DataOfLocation(v.DataSet, city)
+	dataOfLocation, err := meteorology.DataOfLocation(v.DataSet, city)
 
 	if err != nil {
 		fmt.Println("error: ", err)

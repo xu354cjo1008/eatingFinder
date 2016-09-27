@@ -1,14 +1,10 @@
 /****************************************************************************
- * The unit tester for meteorological go package                          .        *
+ * The unit tester for geocoding go package                          .      *
  *                                                                          *
  ****************************************************************************/
-package meteorological
+package geocoding
 
-import (
-	"testing"
-
-	"github.com/xu354cjo1008/eatingFinder/geography/geocoding"
-)
+import "testing"
 
 const GOOGLE_API_KEY string = "AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw"
 
@@ -16,11 +12,6 @@ type locationTestCase struct {
 	lat    float64
 	lng    float64
 	expect string
-}
-
-type weatherTestCase struct {
-	location string
-	expect   string
 }
 
 /**
@@ -38,7 +29,7 @@ func TestLocation(t *testing.T) {
 		locationTestCase{lat: 25.129331, lng: 121.739967, expect: "Keelung City"},
 	}
 
-	geocode := geocoding.NewGeocode(GOOGLE_API_KEY, "en")
+	geocode := NewGeocode(GOOGLE_API_KEY, "en")
 
 	for index, testCase := range testCases {
 		if res, err := geocode.GetCityByLatlng(testCase.lat, testCase.lng); res != testCase.expect || err != nil {
@@ -57,44 +48,6 @@ func TestLocation(t *testing.T) {
 				"longtitude", testCase.lng,
 				"Expected", testCase.expect,
 				"Got", res,
-				"Pass",
-			)
-		}
-	}
-}
-
-/**
- * Test job for weather information parser
- */
-func TestWeatherApi(t *testing.T) {
-	testCases := []weatherTestCase{
-		weatherTestCase{location: "Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
-		weatherTestCase{location: "New Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
-		weatherTestCase{location: "Taoyuan City", expect: "CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
-	}
-	weatherData, err := ParseWeatherXml()
-	if err != nil {
-		t.Error(
-			"Failed to parse weather xml",
-		)
-		return
-	}
-	for index, testCase := range testCases {
-		dataOfLocation, err := DataOfLocation(weatherData.DataSet, testCase.location)
-		if dataOfLocation.WeatherElements[0].Time[0].Parameter.Name != testCase.expect || err != nil {
-			t.Error(
-				"#", index,
-				"location", testCase.location,
-				"Expected", testCase.expect,
-				"Got", dataOfLocation.WeatherElements[0].Time[0].Parameter.Name,
-				"Failed",
-			)
-		} else {
-			t.Log(
-				"#", index,
-				"location", testCase.location,
-				"Expected", testCase.expect,
-				"Got", dataOfLocation.WeatherElements[0].Time[0].Parameter.Name,
 				"Pass",
 			)
 		}
