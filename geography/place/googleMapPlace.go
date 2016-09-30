@@ -10,7 +10,7 @@ import (
 
 type gMapNearbySearchBase struct {
 	client *maps.Client
-	resp   map[int]*maps.PlacesSearchResponse
+	resp   []*maps.PlacesSearchResponse
 	req    *maps.NearbySearchRequest
 }
 
@@ -21,14 +21,14 @@ func (base *gMapNearbySearchBase) requireBy(lat float64, lng float64, rad uint, 
 	return
 }
 func (base *gMapNearbySearchBase) requireTo() (err error) {
-	page := 1
+	page := 0
 	for {
 		resp, err := base.client.NearbySearch(context.Background(), base.req)
 		if err != nil {
 			break
 		}
 
-		base.resp[page] = &resp
+		base.resp = append(base.resp, &resp)
 		if base.resp[page].NextPageToken != "" {
 			time.Sleep(3000 * time.Millisecond)
 			base.req.PageToken = base.resp[page].NextPageToken
@@ -39,24 +39,22 @@ func (base *gMapNearbySearchBase) requireTo() (err error) {
 	}
 	return
 }
-func (base *gMapNearbySearchBase) parsing() (res map[int]map[int]map[string]interface{}, err error) {
-	res = make(map[int]map[int]map[string]interface{})
+func (base *gMapNearbySearchBase) parsing() (res [][]map[string]interface{}, err error) {
+	res = make([][]map[string]interface{}, 0)
 	allRes := base.resp
-	for page, paper := range allRes {
-		if _, ok := res[page]; !ok {
-			res[page] = make(map[int]map[string]interface{})
+	for _, paper := range allRes {
+		page := make([]map[string]interface{}, 0)
+		for _, value := range paper.Results {
+			tag := make(map[string]interface{})
+			tag["Location"] = fmt.Sprintf("lat: %f, lng: %f", value.Geometry.Location.Lat, value.Geometry.Location.Lng) // float64, float64
+			tag["name"] = value.Name                                                                                    // string
+			tag["open_now"] = value.OpeningHours.OpenNow                                                                // bool
+			tag["place_id"] = value.PlaceID                                                                             // string
+			tag["rating"] = value.Rating                                                                                // float32
+			tag["vicinity"] = value.Vicinity                                                                            // string
+			page = append(page, tag)
 		}
-		for rank, value := range paper.Results {
-			if _, ok := res[page][rank]; !ok {
-				res[page][rank] = make(map[string]interface{})
-			}
-			res[page][rank]["Location"] = fmt.Sprintf("lat: %f, lng: %f", value.Geometry.Location.Lat, value.Geometry.Location.Lng) // float64, float64
-			res[page][rank]["name"] = value.Name                                                                                    // string
-			res[page][rank]["open_now"] = value.OpeningHours.OpenNow                                                                // bool
-			res[page][rank]["place_id"] = value.PlaceID                                                                             // string
-			res[page][rank]["rating"] = value.Rating                                                                                // float32
-			res[page][rank]["vicinity"] = value.Vicinity                                                                            // string
-		}
+		res = append(res, page)
 	}
 	return
 }
@@ -65,7 +63,7 @@ func Init_gMapNS(apiKey string, clientID string, signature string, lat float64, 
 	// Initialize
 	base = &gMapNearbySearchBase{
 		client: nil,
-		resp:   make(map[int]*maps.PlacesSearchResponse),
+		resp:   make([]*maps.PlacesSearchResponse, 0),
 		req:    new(maps.NearbySearchRequest),
 	}
 	// Client

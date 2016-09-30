@@ -26,7 +26,7 @@ type googleBase struct {
 type googleMethod interface {
 	requireTo() error
 	requireBy(float64, float64, uint, string) error
-	parsing() (map[int]map[int]map[string]interface{}, error)
+	parsing() ([][]map[string]interface{}, error)
 }
 
 var priority = map[string]int{
@@ -71,7 +71,7 @@ func whichSource() (res string) {
  * @return res The restaurants by json.
  * @return err Error description, this will be nil if no error occurs.
  */
-func (base *googleBase) GetNearRestaurants(lat float64, lng float64, rad uint, lan string) (res map[int]map[int]map[string]interface{}, err error) {
+func (base *googleBase) GetNearRestaurants(lat float64, lng float64, rad uint, lan string) (res [][]map[string]interface{}, err error) {
 	// Initialize
 	switch base.source {
 	case googleLib:
