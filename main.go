@@ -3,8 +3,10 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 
+	"github.com/kr/pretty"
 	"github.com/xu354cjo1008/eatingFinder/geography/geocoding"
 	"github.com/xu354cjo1008/eatingFinder/meteorology"
 )
@@ -29,24 +31,16 @@ func main() {
 		os.Exit(-1)
 	}
 
-	fmt.Println(city)
+	pretty.Println(city)
 
-	v, err := meteorology.ParseWeatherXml()
+	meteo := meteorology.NewMeteorology("CWB-2FC70596-59B4-4CC5-98E5-BCC6490E30DD", "en")
+	data, err := meteo.GetWeather(city)
 	if err != nil {
-		fmt.Println("error: ", err)
+		log.Println("error: ", err)
 		os.Exit(-1)
 	}
 
-	dataOfLocation, err := meteorology.DataOfLocation(v.DataSet, city)
-
-	if err != nil {
-		fmt.Println("error: ", err)
-		os.Exit(-1)
-	}
-
-	fmt.Println(dataOfLocation.LocationName)
-	fmt.Println(dataOfLocation.WeatherElements[0].Time[0].StartTime)
-	fmt.Println(dataOfLocation.WeatherElements[0].Time[0].Parameter.Name)
+	pretty.Println(data)
 
 	os.Exit(0)
 }
