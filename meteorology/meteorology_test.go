@@ -8,7 +8,7 @@ import "testing"
 
 type weatherTestCase struct {
 	location string
-	expect   string
+	expect   int
 }
 
 /**
@@ -17,9 +17,9 @@ type weatherTestCase struct {
 func TestWeatherApi(t *testing.T) {
 
 	testCases := []weatherTestCase{
-		weatherTestCase{location: "Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
-		weatherTestCase{location: "New Taipei City", expect: "MOSTLY CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
-		weatherTestCase{location: "Taoyuan City", expect: "CLOUDY WITH SHOWERS OR THUNDERSTORMS"},
+		weatherTestCase{location: "Taipei City", expect: WX_MOSTLY + WX_CLEAR},
+		weatherTestCase{location: "New Taipei City", expect: WX_MOSTLY + WX_CLEAR},
+		weatherTestCase{location: "Taoyuan City", expect: WX_MOSTLY + WX_CLEAR},
 	}
 
 	for index, testCase := range testCases {

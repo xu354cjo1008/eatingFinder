@@ -162,6 +162,52 @@ func (meteo *cwdMeteo) request() (*Weathers, error) {
 	return &v, nil
 }
 
+func (meteo *cwdMeteo) transformWxToEnum(desc string) int {
+
+	wxMap := map[string]int{
+		"CLEAR":          WX_CLEAR,
+		"CLOUDY":         WX_CLOUDY,
+		"FOG":            WX_FOG,
+		"RAIN":           WX_RAIN,
+		"SHOWERS":        WX_SHOWERS,
+		"THUNDERSTORMS":  WX_THUNDERSTORMS,
+		"THUNDERSHOWERS": WX_THUNDERSHOWERS,
+		"PARTLY":         WX_PARTLY,
+		"MOSTLY":         WX_MOSTLY,
+		"OCCASIONAL":     WX_OCCASIONAL,
+		"LOCAL":          WX_LOCAL,
+		"AFTERNOON":      WX_AFTERNOON,
+	}
+
+	res := 0
+
+	for index, wx := range wxMap {
+		if strings.Contains(desc, index) {
+			res += wx
+		}
+	}
+
+	return res
+}
+
+func (meteo *cwdMeteo) transformCIToEnum(desc string) int {
+
+	CIMap := map[string]int{
+		"COMFORTABLE": CI_COMFORTABLE,
+		"HOT":         CI_HOT,
+	}
+
+	res := 0
+
+	for index, ci := range CIMap {
+		if strings.Contains(desc, index) {
+			res += ci
+		}
+	}
+
+	return res
+}
+
 func (meteo *cwdMeteo) getWeather(location string, time time.Time) (*Weather, error) {
 
 	weatherData, err := meteo.request()
@@ -197,13 +243,13 @@ func (meteo *cwdMeteo) getWeather(location string, time time.Time) (*Weather, er
 
 	maxTemp, err := strconv.Atoi(maxT.Parameter.Name)
 	minTemp, err := strconv.Atoi(minT.Parameter.Name)
-	_pop, err := strconv.Atoi(pop.Parameter.Name)
+	probOfprecip, err := strconv.Atoi(pop.Parameter.Name)
 	weather := Weather{
-		weather:      wx.Parameter.Name,
+		weather:      meteo.transformWxToEnum(wx.Parameter.Name),
 		maxTemp:      maxTemp,
 		minTemp:      minTemp,
-		comfortIndex: ci.Parameter.Name,
-		pop:          _pop,
+		comfortIndex: meteo.transformCIToEnum(ci.Parameter.Name),
+		pop:          probOfprecip,
 	}
 
 	return &weather, nil
