@@ -60,7 +60,8 @@ func (meteo *Meteorology) GetWeather(location string) (*Weather, error) {
 func NewMeteorology(apiKey string, language string) *Meteorology {
 
 	meteo := Meteorology{
-		meteoHandler: newCwdMeteo(apiKey, language),
+		//meteoHandler: newCwdMeteo(apiKey, language),
+		meteoHandler: newOwmMeteo(apiKey, language),
 		apiKey:       apiKey,
 		language:     language,
 	}
