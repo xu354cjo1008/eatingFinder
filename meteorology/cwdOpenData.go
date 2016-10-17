@@ -162,34 +162,6 @@ func (meteo *cwdMeteo) request() (*Weathers, error) {
 	return &v, nil
 }
 
-func (meteo *cwdMeteo) transformWxToEnum(desc string) int {
-
-	wxMap := map[string]int{
-		"CLEAR":          WX_CLEAR,
-		"CLOUDY":         WX_CLOUDY,
-		"FOG":            WX_FOG,
-		"RAIN":           WX_RAIN,
-		"SHOWERS":        WX_SHOWERS,
-		"THUNDERSTORMS":  WX_THUNDERSTORMS,
-		"THUNDERSHOWERS": WX_THUNDERSHOWERS,
-		"PARTLY":         WX_PARTLY,
-		"MOSTLY":         WX_MOSTLY,
-		"OCCASIONAL":     WX_OCCASIONAL,
-		"LOCAL":          WX_LOCAL,
-		"AFTERNOON":      WX_AFTERNOON,
-	}
-
-	res := 0
-
-	for index, wx := range wxMap {
-		if strings.Contains(desc, index) {
-			res += wx
-		}
-	}
-
-	return res
-}
-
 func (meteo *cwdMeteo) transformCIToEnum(desc string) int {
 
 	CIMap := map[string]int{
@@ -245,7 +217,7 @@ func (meteo *cwdMeteo) getWeather(location string, time time.Time) (*Weather, er
 	minTemp, err := strconv.Atoi(minT.Parameter.Name)
 	probOfprecip, err := strconv.Atoi(pop.Parameter.Name)
 	weather := Weather{
-		weather:      meteo.transformWxToEnum(wx.Parameter.Name),
+		weather:      transformWxToEnum(wx.Parameter.Name),
 		maxTemp:      maxTemp,
 		minTemp:      minTemp,
 		comfortIndex: meteo.transformCIToEnum(ci.Parameter.Name),

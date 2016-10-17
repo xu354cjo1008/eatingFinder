@@ -149,7 +149,7 @@ func (meteo *owmMeteo) getWeather(location string, time time.Time) (*Weather, er
 	pretty.Println(element)
 	parameter, _ = meteo.getParameter(element, "description")
 	pretty.Println("weather: ", parameter)
-
+	weather.weather = transformWxToEnum(parameter.(string))
 	element, _ = meteo.getElement("main")
 	parameter, _ = meteo.getParameter(element, "temp_max")
 	weather.maxTemp = int(meteo.tempKToCel(parameter.(float64)))

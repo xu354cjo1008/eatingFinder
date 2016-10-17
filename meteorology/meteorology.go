@@ -4,7 +4,10 @@
  ****************************************************************************/
 package meteorology
 
-import "time"
+import (
+	"strings"
+	"time"
+)
 
 /**
  * enum bitmap of weather description
@@ -18,6 +21,7 @@ const (
 	WX_SHOWERS
 	WX_THUNDERSTORMS
 	WX_THUNDERSHOWERS
+	WX_LIGHTLY
 	WX_PARTLY
 	WX_MOSTLY
 	WX_OCCASIONAL
@@ -46,6 +50,35 @@ type Weather struct {
 	minTemp      int
 	comfortIndex int
 	pop          int
+}
+
+func transformWxToEnum(desc string) int {
+
+	wxMap := map[string]int{
+		"CLEAR":          WX_CLEAR,
+		"CLOUDY":         WX_CLOUDY,
+		"FOG":            WX_FOG,
+		"RAIN":           WX_RAIN,
+		"SHOWERS":        WX_SHOWERS,
+		"THUNDERSTORMS":  WX_THUNDERSTORMS,
+		"THUNDERSHOWERS": WX_THUNDERSHOWERS,
+		"LIGHT":          WX_LIGHTLY,
+		"PARTLY":         WX_PARTLY,
+		"MOSTLY":         WX_MOSTLY,
+		"OCCASIONAL":     WX_OCCASIONAL,
+		"LOCAL":          WX_LOCAL,
+		"AFTERNOON":      WX_AFTERNOON,
+	}
+
+	res := 0
+
+	for index, wx := range wxMap {
+		if strings.Contains(strings.ToUpper(desc), index) {
+			res += wx
+		}
+	}
+
+	return res
 }
 
 func (meteo *Meteorology) GetWeather(location string) (*Weather, error) {
