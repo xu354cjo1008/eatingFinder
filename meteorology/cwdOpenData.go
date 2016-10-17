@@ -6,9 +6,12 @@ package meteorology
 
 import (
 	"bytes"
+	"encoding/json"
 	"encoding/xml"
 	"errors"
 	"fmt"
+	"io"
+	"log"
 	"strconv"
 	"strings"
 	"time"
@@ -63,6 +66,8 @@ type parameter struct {
 type cwdMeteo struct {
 	apiKey   string
 	language string
+	logLevel int
+	logger   *log.Logger
 	dataset  dataset
 }
 
@@ -110,7 +115,11 @@ func (meteo *cwdMeteo) getElement(dataOflocation location, name string) (*weathe
 
 func (meteo *cwdMeteo) getInfoByTime(element weatherElement, inTime time.Time) (*dataByTime, error) {
 
-	for _, dataOfTime := range element.Time {
+	if meteo.logLevel == 1 {
+		meteo.logger.Println("data time is ", inTime.String())
+	}
+
+	for index, dataOfTime := range element.Time {
 		startTime, err := time.Parse(time.RFC3339, dataOfTime.StartTime)
 		if err != nil {
 			return nil, err
@@ -118,6 +127,11 @@ func (meteo *cwdMeteo) getInfoByTime(element weatherElement, inTime time.Time) (
 		endTime, err := time.Parse(time.RFC3339, dataOfTime.EndTime)
 		if err != nil {
 			return nil, err
+		}
+
+		if meteo.logLevel == 1 {
+			meteo.logger.Println("element#", index, " start time is ", startTime.String())
+			meteo.logger.Println("element#", index, " end time is ", endTime.String())
 		}
 
 		if inTime.After(startTime) && inTime.Before(endTime) {
@@ -159,6 +173,12 @@ func (meteo *cwdMeteo) request() (*Weathers, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	if meteo.logLevel == 1 {
+		t, _ := json.MarshalIndent(v, "", "  ")
+		meteo.logger.Println("request raw data", string(t))
+	}
+
 	return &v, nil
 }
 
@@ -227,11 +247,20 @@ func (meteo *cwdMeteo) getWeather(location string, time time.Time) (*Weather, er
 	return &weather, nil
 }
 
-func newCwdMeteo(apiKey string, language string) *cwdMeteo {
+func newCwdMeteo(apiKey string, language string, logFile io.Writer) *cwdMeteo {
 
+	var loggingLevel int
+	if logFile == nil {
+		loggingLevel = 0
+	} else {
+		loggingLevel = 1
+	}
 	meteo := cwdMeteo{
 		apiKey:   apiKey,
 		language: language,
+		logLevel: loggingLevel,
+		logger: log.New(logFile, "CwdMeteo: ",
+			log.Ldate|log.Ltime|log.Lshortfile),
 	}
 
 	return &meteo

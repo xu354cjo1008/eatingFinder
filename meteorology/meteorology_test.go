@@ -25,7 +25,7 @@ func TestWeatherApi(t *testing.T) {
 	for index, testCase := range testCases {
 		//		dataOfLocation, err := DataOfLocation(weatherData.DataSet, testCase.location)
 		//		if dataOfLocation.WeatherElements[0].Time[0].Parameter.Name != testCase.expect || err != nil {
-		meteo := NewMeteorology("CWB-2FC70596-59B4-4CC5-98E5-BCC6490E30DD", "en")
+		meteo := NewMeteorology("CWB-2FC70596-59B4-4CC5-98E5-BCC6490E30DD", "en", nil)
 		data, err := meteo.GetWeather(testCase.location)
 		if err != nil || data.weather != testCase.expect {
 			t.Error(

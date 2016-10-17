@@ -8,7 +8,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
 	"io/ioutil"
+	"log"
 	"time"
 
 	"github.com/kr/pretty"
@@ -24,6 +26,8 @@ const (
 type owmMeteo struct {
 	apiKey   string
 	language string
+	logLevel int
+	logger   *log.Logger
 	response map[string]interface{}
 }
 
@@ -74,12 +78,16 @@ func (meteo *owmMeteo) fakeRequest(city string, country string, reqType string) 
 		return errors.New("Invalid country name")
 	}
 
-	aa, _ := ioutil.ReadFile("testCase/openWeatherMapTaipeiForecast.json")
-	var testaa map[string]interface{}
-	if err := json.Unmarshal(aa, &testaa); err != nil {
+	r, _ := ioutil.ReadFile("testCase/openWeatherMapTaipeiForecast.json")
+	var forecast map[string]interface{}
+	if err := json.Unmarshal(r, &forecast); err != nil {
 		return err
 	}
-	pretty.Println(testaa)
+
+	if meteo.logLevel == 1 {
+		t, _ := json.MarshalIndent(forecast, "", "  ")
+		meteo.logger.Println("request forecast raw data", string(t))
+	}
 
 	resp, err := ioutil.ReadFile("testCase/openWeatherMapTaipeiWeather.json")
 	if err != nil {
@@ -90,7 +98,10 @@ func (meteo *owmMeteo) fakeRequest(city string, country string, reqType string) 
 	if err := json.Unmarshal(resp, &(meteo.response)); err != nil {
 		return err
 	}
-	pretty.Println(meteo.response)
+	if meteo.logLevel == 1 {
+		t, _ := json.MarshalIndent(meteo.response, "", "  ")
+		meteo.logger.Println("request weather raw data", string(t))
+	}
 
 	return nil
 }
@@ -146,7 +157,6 @@ func (meteo *owmMeteo) getWeather(location string, time time.Time) (*Weather, er
 	weather := Weather{}
 
 	element, _ = meteo.getElement("weather")
-	pretty.Println(element)
 	parameter, _ = meteo.getParameter(element, "description")
 	pretty.Println("weather: ", parameter)
 	weather.weather = transformWxToEnum(parameter.(string))
@@ -159,10 +169,20 @@ func (meteo *owmMeteo) getWeather(location string, time time.Time) (*Weather, er
 	return &weather, nil
 }
 
-func newOwmMeteo(apiKey string, language string) *owmMeteo {
+func newOwmMeteo(apiKey string, language string, logFile io.Writer) *owmMeteo {
+
+	var loggingLevel int
+	if logFile == nil {
+		loggingLevel = 0
+	} else {
+		loggingLevel = 1
+	}
 
 	meteo := owmMeteo{
-		apiKey: apiKey,
+		apiKey:   apiKey,
+		logLevel: loggingLevel,
+		logger: log.New(logFile, "OwmMeteo: ",
+			log.Ldate|log.Ltime|log.Lshortfile),
 	}
 
 	return &meteo

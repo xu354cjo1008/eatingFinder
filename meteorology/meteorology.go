@@ -5,6 +5,7 @@
 package meteorology
 
 import (
+	"io"
 	"strings"
 	"time"
 )
@@ -90,13 +91,13 @@ func (meteo *Meteorology) GetWeather(location string) (*Weather, error) {
 	return data, nil
 }
 
-func NewMeteorology(apiKey string, language string) *Meteorology {
+func NewMeteorology(apiKey string, language string, logFile io.Writer) *Meteorology {
 
 	meteo := Meteorology{
-		//meteoHandler: newCwdMeteo(apiKey, language),
-		meteoHandler: newOwmMeteo(apiKey, language),
-		apiKey:       apiKey,
-		language:     language,
+		meteoHandler: newCwdMeteo(apiKey, language, logFile),
+		//meteoHandler: newOwmMeteo(apiKey, language, logFile),
+		apiKey:   apiKey,
+		language: language,
 	}
 
 	return &meteo
