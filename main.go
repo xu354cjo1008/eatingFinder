@@ -10,29 +10,20 @@ import (
 
 	"github.com/kr/pretty"
 	"github.com/xu354cjo1008/eatingFinder/geography/geocoding"
+	"github.com/xu354cjo1008/eatingFinder/httpHandler"
 	"github.com/xu354cjo1008/eatingFinder/meteorology"
 )
 
-/**
- * This is the main just for test
- * We need to write another unit test program to do this
- */
-func main() {
-
-	latPtr := flag.Float64("lat", 25.057339, "latitude of user position")
-	lntPtr := flag.Float64("lnt", 121.56086, "longtitude of user position")
-	logFile := flag.String("log", "", "log path")
-
-	flag.Parse()
+func meteoUtil(lat float64, lng float64, logFile string) error {
 
 	var file io.Writer = nil
 	var err error
 
-	if logFile != nil && *logFile != "" {
-		if strings.Compare(*logFile, "fg") == 0 {
+	if logFile != "" {
+		if strings.Compare(logFile, "fg") == 0 {
 			file = os.Stdout
 		} else {
-			file, err = os.OpenFile(*logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+			file, err = os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 			if err != nil {
 				log.Fatalln("Failed to open log file :", err)
 			}
@@ -41,11 +32,11 @@ func main() {
 
 	geocode := geocoding.NewGeocode("AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw", "en")
 
-	city, err := geocode.GetCityByLatlng(*latPtr, *lntPtr)
+	city, err := geocode.GetCityByLatlng(lat, lng)
 
 	if err != nil {
 		fmt.Println("error: ", err)
-		os.Exit(-1)
+		return err
 	}
 
 	pretty.Println(city)
@@ -54,10 +45,39 @@ func main() {
 	data, err := meteo.GetWeather(city)
 	if err != nil {
 		log.Println("error: ", err)
-		os.Exit(-1)
+		return err
 	}
 
 	pretty.Println(data)
+
+	return nil
+}
+
+/**
+ * This is the main just for test
+ * We need to write another unit test program to do this
+ */
+func main() {
+
+	mode := flag.String("mode", "meteo", "utility mode: <meteo|server>")
+	latPtr := flag.Float64("lat", 25.057339, "latitude of user position")
+	lngPtr := flag.Float64("lng", 121.56086, "longtitude of user position")
+	logFilePtr := flag.String("log", "", "log path <path|fg>")
+
+	flag.Parse()
+
+	var err error
+
+	switch *mode {
+	case "meteo":
+		err = meteoUtil(*latPtr, *lngPtr, *logFilePtr)
+		if err != nil {
+			pretty.Println(err)
+			os.Exit(-1)
+		}
+	case "server":
+		httpHandler.RunServer()
+	}
 
 	os.Exit(0)
 }
