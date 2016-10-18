@@ -1,0 +1,3 @@
+[development]
+apiHost = "localhost"
+apiPort = 8080

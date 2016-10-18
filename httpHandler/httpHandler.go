@@ -38,6 +38,7 @@ func apiHandler(rw http.ResponseWriter, r *http.Request) {
 }
 
 func apiGeocodeHandler(rw http.ResponseWriter, r *http.Request) {
+
 	fmt.Fprintln(rw, "Api Geocode Handler")
 
 	vars := mux.Vars(r)
@@ -61,7 +62,7 @@ func middleware1(rw http.ResponseWriter, r *http.Request, next http.HandlerFunc)
 	next(rw, r)
 }
 
-func RunServer() {
+func RunServer(port int) {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", homeHandler)
@@ -74,6 +75,6 @@ func RunServer() {
 	n := negroni.Classic()
 	n.UseHandler(r)
 
-	fmt.Println("Starting server on :8000")
-	log.Fatal(http.ListenAndServe(":8000", n))
+	log.Println("Starting server on " + ":" + strconv.Itoa(port))
+	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(port), n))
 }

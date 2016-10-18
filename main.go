@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/kr/pretty"
+	"github.com/spf13/viper"
 	"github.com/xu354cjo1008/eatingFinder/geography/geocoding"
 	"github.com/xu354cjo1008/eatingFinder/httpHandler"
 	"github.com/xu354cjo1008/eatingFinder/meteorology"
@@ -59,6 +60,10 @@ func meteoUtil(lat float64, lng float64, logFile string) error {
  */
 func main() {
 
+	var err error
+	var apiHost string
+	var apiPort int
+
 	mode := flag.String("mode", "meteo", "utility mode: <meteo|server>")
 	latPtr := flag.Float64("lat", 25.057339, "latitude of user position")
 	lngPtr := flag.Float64("lng", 121.56086, "longtitude of user position")
@@ -66,7 +71,21 @@ func main() {
 
 	flag.Parse()
 
-	var err error
+	viper.SetConfigName("app")
+	viper.AddConfigPath("config")
+
+	err = viper.ReadInConfig()
+	if err != nil {
+		fmt.Println("Config file not found...")
+	} else {
+		apiHost = viper.GetString("development.apiHost")
+		apiPort = viper.GetInt("development.apiPort")
+	}
+
+	log.Printf("\nDevelopment Config found:\n server = %s\n"+
+		" port = %d\n",
+		apiHost,
+		apiPort)
 
 	switch *mode {
 	case "meteo":
@@ -76,7 +95,7 @@ func main() {
 			os.Exit(-1)
 		}
 	case "server":
-		httpHandler.RunServer()
+		httpHandler.RunServer(apiPort)
 	}
 
 	os.Exit(0)
