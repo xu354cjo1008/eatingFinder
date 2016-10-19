@@ -15,7 +15,7 @@ import (
 	"github.com/xu354cjo1008/eatingFinder/meteorology"
 )
 
-func meteoUtil(lat float64, lng float64, logFile string) error {
+func meteoUtil(lat float64, lng float64, logFile string, googleApiKey string, cwdApiKey string) error {
 
 	var file io.Writer = nil
 	var err error
@@ -31,7 +31,7 @@ func meteoUtil(lat float64, lng float64, logFile string) error {
 		}
 	}
 
-	geocode := geocoding.NewGeocode("AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw", "en")
+	geocode := geocoding.NewGeocode(googleApiKey, "en")
 
 	city, err := geocode.GetCityByLatlng(lat, lng)
 
@@ -42,7 +42,7 @@ func meteoUtil(lat float64, lng float64, logFile string) error {
 
 	pretty.Println(city)
 
-	meteo := meteorology.NewMeteorology("CWB-2FC70596-59B4-4CC5-98E5-BCC6490E30DD", "en", file)
+	meteo := meteorology.NewMeteorology(cwdApiKey, "en", file)
 	data, err := meteo.GetWeather(city)
 	if err != nil {
 		log.Println("error: ", err)
@@ -63,6 +63,8 @@ func main() {
 	var err error
 	var apiHost string
 	var apiPort int
+	var googleApiKey string
+	var cwdApiKey string
 
 	mode := flag.String("mode", "meteo", "utility mode: <meteo|server>")
 	latPtr := flag.Float64("lat", 25.057339, "latitude of user position")
@@ -76,10 +78,12 @@ func main() {
 
 	err = viper.ReadInConfig()
 	if err != nil {
-		fmt.Println("Config file not found...")
+		log.Println("Config file not found...")
 	} else {
 		apiHost = viper.GetString("development.apiHost")
 		apiPort = viper.GetInt("development.apiPort")
+		googleApiKey = viper.GetString("development.googleApiKey")
+		cwdApiKey = viper.GetString("development.cwdApiKey")
 	}
 
 	log.Printf("\nDevelopment Config found:\n server = %s\n"+
@@ -89,7 +93,7 @@ func main() {
 
 	switch *mode {
 	case "meteo":
-		err = meteoUtil(*latPtr, *lngPtr, *logFilePtr)
+		err = meteoUtil(*latPtr, *lngPtr, *logFilePtr, googleApiKey, cwdApiKey)
 		if err != nil {
 			pretty.Println(err)
 			os.Exit(-1)

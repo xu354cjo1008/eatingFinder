@@ -4,7 +4,12 @@
  ****************************************************************************/
 package meteorology
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+
+	"github.com/spf13/viper"
+)
 
 type weatherTestCase struct {
 	location string
@@ -16,6 +21,19 @@ type weatherTestCase struct {
  */
 func TestWeatherApi(t *testing.T) {
 
+	var cwdApiKey string
+	var err error
+
+	viper.SetConfigName("app")
+	viper.AddConfigPath("../config")
+
+	err = viper.ReadInConfig()
+	if err != nil {
+		fmt.Println("Config file not found...")
+	} else {
+		cwdApiKey = viper.GetString("development.cwdApiKey")
+	}
+
 	testCases := []weatherTestCase{
 		weatherTestCase{location: "Taipei City", expect: WX_MOSTLY + WX_CLEAR},
 		weatherTestCase{location: "New Taipei City", expect: WX_MOSTLY + WX_CLEAR},
@@ -25,7 +43,7 @@ func TestWeatherApi(t *testing.T) {
 	for index, testCase := range testCases {
 		//		dataOfLocation, err := DataOfLocation(weatherData.DataSet, testCase.location)
 		//		if dataOfLocation.WeatherElements[0].Time[0].Parameter.Name != testCase.expect || err != nil {
-		meteo := NewMeteorology("CWB-2FC70596-59B4-4CC5-98E5-BCC6490E30DD", "en", nil)
+		meteo := NewMeteorology(cwdApiKey, "en", nil)
 		data, err := meteo.GetWeather(testCase.location)
 		if err != nil || data.weather != testCase.expect {
 			t.Error(

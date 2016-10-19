@@ -4,9 +4,12 @@
  ****************************************************************************/
 package geocoding
 
-import "testing"
+import (
+	"fmt"
+	"testing"
 
-const GOOGLE_API_KEY string = "AIzaSyDJXVVPUtvmRDcBN4nTPNVAI26cUzOaztw"
+	"github.com/spf13/viper"
+)
 
 type locationTestCase struct {
 	lat    float64
@@ -21,6 +24,20 @@ type locationTestCase struct {
  * Add test case into testCases array if needed
  */
 func TestLocation(t *testing.T) {
+
+	var googleApiKey string
+	var err error
+
+	viper.SetConfigName("app")
+	viper.AddConfigPath("../../config")
+
+	err = viper.ReadInConfig()
+	if err != nil {
+		fmt.Println("Config file not found...")
+	} else {
+		googleApiKey = viper.GetString("development.googleApiKey")
+	}
+
 	testCases := []locationTestCase{
 		locationTestCase{lat: 25.053257, lng: 121.539702, expect: "Taipei City"},
 		locationTestCase{lat: 24.744071, lng: 121.763291, expect: "Yilan County"},
@@ -29,7 +46,7 @@ func TestLocation(t *testing.T) {
 		locationTestCase{lat: 25.129331, lng: 121.739967, expect: "Keelung City"},
 	}
 
-	geocode := NewGeocode(GOOGLE_API_KEY, "en")
+	geocode := NewGeocode(googleApiKey, "en")
 
 	for index, testCase := range testCases {
 		if res, err := geocode.GetCityByLatlng(testCase.lat, testCase.lng); res != testCase.expect || err != nil {
