@@ -1,5 +1,6 @@
 [development]
+defaultPort = 8080
 apiHost = "localhost"
-apiPort = 8080
+apiPort = 9090
 googleApiKey = ""
 cwdApiKey = ""
