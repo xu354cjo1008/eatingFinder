@@ -2,5 +2,10 @@
 Library for weather information crawl and parsing
 ## How to use:
 go get github.com/xu354cjo1008/eatingFiner
-### Set your google api key in googleApi.go
-Set const GOOGLE_API_KEY="Your google api key"
+### Set your api keys and http port in config/app.toml
+for example:
+[development]
+apiHost = "localhost"
+apiPort = 8080
+googleApiKey = "abcdefgh"
+cwdApiKey = "12345678"
