@@ -100,6 +100,7 @@ func main() {
 	latPtr := flag.Float64("lat", 25.057339, "latitude of user position")
 	lngPtr := flag.Float64("lng", 121.56086, "longtitude of user position")
 	logFilePtr := flag.String("log", "", "log path <path|fg>")
+	port := flag.Int("port", 0, "port number")
 
 	flag.Parse()
 
@@ -108,6 +109,10 @@ func main() {
 	if err != nil {
 		log.Println(err)
 		os.Exit(-1)
+	}
+
+	if (strings.Compare(*mode, "web") == 0 || strings.Compare(*mode, "api") == 0) && *port != 0 {
+		config.defaultPort = *port
 	}
 
 	switch *mode {
