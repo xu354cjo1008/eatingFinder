@@ -63,8 +63,8 @@ func runWebServer() {
 	proxy := goproxy.NewMultipleHostReverseProxy(apiRegistry)
 
 	r := mux.NewRouter()
-	r.HandleFunc("/", homeHandler)
 	r.PathPrefix("/api").Handler(proxy)
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
 
 	n := negroni.Classic()
 	n.UseHandler(r)
