@@ -1,7 +1,10 @@
 # eatingFinder
 Library for weather information crawl and parsing
 ## How to use:
-go get github.com/xu354cjo1008/eatingFiner
+go get github.com/xu354cjo1008/eatingFinder  
+cd eatingFinder  
+glide install  
+go build
 ### Set your api keys and http port in config/app.toml
 for example:  
 [development]  
