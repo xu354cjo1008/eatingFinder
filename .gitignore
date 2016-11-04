@@ -1,3 +1,6 @@
 cscope.*
 weatherGo
 eatingFinder
+.glide/
+glide.lock
+vendor/
