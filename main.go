@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/kr/pretty"
 	"github.com/spf13/viper"
@@ -21,6 +22,10 @@ var config struct {
 	apiPort      int
 	googleApiKey string
 	cwdApiKey    string
+	dbUrl        string
+	dbName       string
+	dbUsername   string
+	dbPassword   string
 }
 
 func configure() error {
@@ -37,14 +42,26 @@ func configure() error {
 		config.apiPort = viper.GetInt("development.apiPort")
 		config.googleApiKey = viper.GetString("development.googleApiKey")
 		config.cwdApiKey = viper.GetString("development.cwdApiKey")
+		config.dbUrl = viper.GetString("development.dbUrl")
+		config.dbName = viper.GetString("development.dbName")
+		config.dbUsername = viper.GetString("development.dbUsername")
+		config.dbPassword = viper.GetString("development.dbPassword")
 	}
 
 	log.Printf("\nDevelopment Config found:\n default server port = %d\n"+
 		" api host = %s\n"+
-		" api port = %d\n",
+		" api port = %d\n"+
+		" db url = %s\n"+
+		" db name = %s\n"+
+		" db user = %s\n"+
+		" db password = %s\n",
 		config.defaultPort,
 		config.apiHost,
-		config.apiPort)
+		config.apiPort,
+		config.dbUrl,
+		config.dbName,
+		config.dbUsername,
+		config.dbPassword)
 
 	return nil
 }
@@ -122,6 +139,29 @@ func main() {
 			pretty.Println(err)
 			os.Exit(-1)
 		}
+	case "save":
+		storage := NewStorage(config.dbUrl)
+		db, err := storage.getDb(config.dbName, config.dbUsername, config.dbPassword)
+		if err != nil {
+			pretty.Println(err)
+			os.Exit(0)
+		}
+		element := ChoiceElement{Lat: *latPtr, Lng: *lngPtr, Time: time.Now()}
+		err = storage.insertChoice(db, element)
+		if err != nil {
+			pretty.Println(err)
+			os.Exit(0)
+		}
+		pretty.Println("store element: ", element, "to mongodb")
+	case "load":
+		storage := NewStorage(config.dbUrl)
+		db, err := storage.getDb(config.dbName, config.dbUsername, config.dbPassword)
+		if err != nil {
+			pretty.Println(err)
+			os.Exit(0)
+		}
+		choice := storage.findChoiceListByLocation(db, *latPtr, *lngPtr, 10)
+		pretty.Println(choice)
 	case "web":
 		runWebServer()
 	case "api":

@@ -4,3 +4,7 @@ apiHost = "localhost"
 apiPort = 9090
 googleApiKey = ""
 cwdApiKey = ""
+dbUrl = "172.17.0.4"
+dbName = "test"
+dbUsername = "myTester"
+dbPassword = "myTester"

@@ -8,3 +8,4 @@ import:
 - package: github.com/spf13/viper
 - package: github.com/urfave/negroni
 - package: googlemaps.github.io/maps
+- package: gopkg.in/mgo.v2
