@@ -56,20 +56,24 @@ func (storage *Storage) findChoiceListByLocation(db *mgo.Database, lat float64, 
 	log.Println("Things objects count: ", countNum)
 
 	result := []ChoiceElement{}
-	collection.Find(bson.M{"lat": lat}).All(&result)
+	//	collection.Find(bson.M{"lat": lat}).All(&result)
 
-	//	collection.Find(bson.M{
-	//		"lat": bson.M{
-	//			"$gt": lat - 100,
-	//			"$lt": lat + 100,
-	//		},
-	//		"$or": bson.M{
-	//			"lng": bson.M{
-	//				"$gt": lng - 100,
-	//				"$lt": lng + 100,
-	//			},
-	//		},
-	//	}).All(&result)
+	collection.Find(bson.M{
+		"$and": []bson.M{
+			bson.M{
+				"lat": bson.M{
+					"$gt": lat - 10,
+					"$lt": lat + 10,
+				},
+			},
+			bson.M{
+				"lng": bson.M{
+					"$gt": lng - 10,
+					"$lt": lng + 10,
+				},
+			},
+		},
+	}).All(&result)
 
 	return result
 }
