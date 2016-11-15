@@ -19,11 +19,18 @@ type Storage struct {
 }
 
 type RestaurantInfo struct {
-	name     string
-	open_now string
-	place_id string
-	rating   float64
-	vicinity string
+	Name     string
+	Open_now string
+	Place_id string
+	Rating   float64
+	Vicinity string
+	Rank     int
+}
+
+type DiscoverInfo struct {
+	Lat    float64
+	Lng    float64
+	Radius float64
 }
 
 type ChoiceElement struct {
@@ -44,7 +51,48 @@ func (storage *Storage) insertChoice(db *mgo.Database, element ChoiceElement) er
 	return nil
 }
 
-func (storage *Storage) findChoiceListByLocation(db *mgo.Database, lat float64, lng float64, size int) []ChoiceElement {
+func (storage *Storage) insertDiscoverInfo(db *mgo.Database, element DiscoverInfo) error {
+
+	collection := db.C("restaurant_discover")
+	err := collection.Insert(element)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (storage *Storage) findDiscoverInfo(db *mgo.Database, lat float64, lng float64, maxRadius float64) ([]DiscoverInfo, error) {
+	collection := db.C("restaurant_discover")
+
+	countNum, err := collection.Count()
+	if err != nil {
+		return nil, err
+	}
+	var result []DiscoverInfo
+
+	if countNum > 0 {
+		collection.Find(bson.M{
+			"$and": []bson.M{
+				bson.M{
+					"lat": bson.M{
+						"$gt": lat - 1,
+						"$lt": lat + 1,
+					},
+				},
+				bson.M{
+					"lng": bson.M{
+						"$gt": lng - 1,
+						"$lt": lng + 1,
+					},
+				},
+			},
+		}).All(&result)
+	}
+
+	return result, nil
+}
+
+func (storage *Storage) findChoiceListByLocation(db *mgo.Database, lat float64, lng float64, size float64) []ChoiceElement {
 
 	collection := db.C("restaurant_choice")
 
@@ -56,20 +104,19 @@ func (storage *Storage) findChoiceListByLocation(db *mgo.Database, lat float64, 
 	log.Println("Things objects count: ", countNum)
 
 	result := []ChoiceElement{}
-	//	collection.Find(bson.M{"lat": lat}).All(&result)
 
 	collection.Find(bson.M{
 		"$and": []bson.M{
 			bson.M{
 				"lat": bson.M{
-					"$gt": lat - 10,
-					"$lt": lat + 10,
+					"$gt": lat - 1,
+					"$lt": lat + 1,
 				},
 			},
 			bson.M{
 				"lng": bson.M{
-					"$gt": lng - 10,
-					"$lt": lng + 10,
+					"$gt": lng - 1,
+					"$lt": lng + 1,
 				},
 			},
 		},
