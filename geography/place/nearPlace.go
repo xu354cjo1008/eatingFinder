@@ -6,8 +6,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/xu354cjo1008/eatingFinder/httpHandler"
 	"reflect"
+
+	"github.com/xu354cjo1008/eatingFinder/httpHandler"
 )
 
 const googleLib string = "google_lib"
@@ -19,7 +20,7 @@ const DEF_RANK string = "prominence"
 const NSP string = "Not Support Now"
 const API_KEY string = "AIzaSyAw-XcK-bqStWykfu3n-kbAeTwJhruRCBc"
 
-type googleBase struct {
+type GoogleBase struct {
 	handler googleMethod
 	source  string
 }
@@ -71,7 +72,7 @@ func whichSource() (res string) {
  * @return res The restaurants by json.
  * @return err Error description, this will be nil if no error occurs.
  */
-func (base *googleBase) GetNearRestaurants(lat float64, lng float64, rad uint, lan string) (res [][]map[string]interface{}, err error) {
+func (base *GoogleBase) GetNearRestaurants(lat float64, lng float64, rad uint, lan string) (res [][]map[string]interface{}, err error) {
 	// Initialize
 	switch base.source {
 	case googleLib:
@@ -167,8 +168,8 @@ func (base *googleBase) GetNearRestaurants(lat float64, lng float64, rad uint, l
  * @return res The basic resource of specific source.
  * @return err Error description, this will be nil if no error occurs.
  */
-func InitPlaceNearbySearch(source string) (res *googleBase, err error) {
-	res = new(googleBase)
+func InitPlaceNearbySearch(source string) (res *GoogleBase, err error) {
+	res = new(GoogleBase)
 	res.source = source
 	switch source {
 	case googleLib:
