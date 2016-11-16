@@ -6,6 +6,7 @@ import (
 	"log"
 	"time"
 
+	"github.com/StefanSchroeder/Golang-Ellipsoid/ellipsoid"
 	"github.com/xu354cjo1008/eatingFinder/meteorology"
 
 	mgo "gopkg.in/mgo.v2"
@@ -61,7 +62,7 @@ func (storage *Storage) insertDiscoverInfo(db *mgo.Database, element DiscoverInf
 	return nil
 }
 
-func (storage *Storage) findDiscoverInfo(db *mgo.Database, lat float64, lng float64, maxRadius float64) ([]DiscoverInfo, error) {
+func (storage *Storage) findDiscoverInfo(db *mgo.Database, lat float64, lng float64, radius float64) ([]DiscoverInfo, error) {
 	collection := db.C("restaurant_discover")
 
 	countNum, err := collection.Count()
@@ -70,19 +71,31 @@ func (storage *Storage) findDiscoverInfo(db *mgo.Database, lat float64, lng floa
 	}
 	var result []DiscoverInfo
 
+	ellip := ellipsoid.Init("WGS84", ellipsoid.Degrees, ellipsoid.Meter, ellipsoid.LongitudeIsSymmetric, ellipsoid.BearingIsSymmetric)
+
+	upLat, upLng := ellip.At(lat, lng, radius, 0)
+	rightLat, rightLng := ellip.At(lat, lng, radius, 90)
+	downLat, downLng := ellip.At(lat, lng, radius, 180)
+	leftLat, leftLng := ellip.At(lat, lng, radius, -90)
+
+	log.Println("upLatLng: ", upLat, ", ", upLng)
+	log.Println("rightLatLng: ", rightLat, ", ", rightLng)
+	log.Println("downLatLng: ", downLat, ", ", downLng)
+	log.Println("leftLatLng: ", leftLat, ", ", leftLng)
+
 	if countNum > 0 {
 		collection.Find(bson.M{
 			"$and": []bson.M{
 				bson.M{
 					"lat": bson.M{
-						"$gt": lat - 1,
-						"$lt": lat + 1,
+						"$gt": downLat,
+						"$lt": upLat,
 					},
 				},
 				bson.M{
 					"lng": bson.M{
-						"$gt": lng - 1,
-						"$lt": lng + 1,
+						"$gt": leftLng,
+						"$lt": rightLng,
 					},
 				},
 			},
@@ -92,7 +105,7 @@ func (storage *Storage) findDiscoverInfo(db *mgo.Database, lat float64, lng floa
 	return result, nil
 }
 
-func (storage *Storage) findChoiceListByLocation(db *mgo.Database, lat float64, lng float64, size float64) []ChoiceElement {
+func (storage *Storage) findChoiceListByLocation(db *mgo.Database, lat float64, lng float64, radius float64) []ChoiceElement {
 
 	collection := db.C("restaurant_choice")
 
@@ -103,20 +116,27 @@ func (storage *Storage) findChoiceListByLocation(db *mgo.Database, lat float64, 
 
 	log.Println("Things objects count: ", countNum)
 
+	ellip := ellipsoid.Init("WGS84", ellipsoid.Degrees, ellipsoid.Meter, ellipsoid.LongitudeIsSymmetric, ellipsoid.BearingIsSymmetric)
+
+	upLat, _ := ellip.At(lat, lng, radius, 0)
+	_, rightLng := ellip.At(lat, lng, radius, 90)
+	downLat, _ := ellip.At(lat, lng, radius, 180)
+	_, leftLng := ellip.At(lat, lng, radius, -90)
+
 	result := []ChoiceElement{}
 
 	collection.Find(bson.M{
 		"$and": []bson.M{
 			bson.M{
 				"lat": bson.M{
-					"$gt": lat - 1,
-					"$lt": lat + 1,
+					"$gt": downLat,
+					"$lt": upLat,
 				},
 			},
 			bson.M{
 				"lng": bson.M{
-					"$gt": lng - 1,
-					"$lt": lng + 1,
+					"$gt": leftLng,
+					"$lt": rightLng,
 				},
 			},
 		},
