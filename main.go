@@ -105,6 +105,28 @@ func meteoUtil(lat float64, lng float64, logFile string) error {
 	return nil
 }
 
+func algUtil(lat float64, lng float64, logFile string) error {
+
+	var file io.Writer = nil
+	var err error
+
+	if logFile != "" {
+		if strings.Compare(logFile, "fg") == 0 {
+			file = os.Stdout
+		} else {
+			file, err = os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+			if err != nil {
+				log.Fatalln("Failed to open log file :", err)
+			}
+		}
+	}
+
+	alg := NewAlgorithm(file)
+	alg.findRestaurantList(ALG_HIGHEST_RATE, algUserData{lat, lng}, 200)
+
+	return nil
+}
+
 /**
  * This is the main just for test
  * We need to write another unit test program to do this
@@ -113,7 +135,7 @@ func main() {
 
 	var err error
 
-	mode := flag.String("mode", "meteo", "utility mode: <meteo|web|api>")
+	mode := flag.String("mode", "meteo", "utility mode: <meteo|web|api|load|save>")
 	latPtr := flag.Float64("lat", 25.057339, "latitude of user position")
 	lngPtr := flag.Float64("lng", 121.56086, "longtitude of user position")
 	logFilePtr := flag.String("log", "", "log path <path|fg>")
@@ -139,6 +161,12 @@ func main() {
 			pretty.Println(err)
 			os.Exit(-1)
 		}
+	case "alg":
+		err = algUtil(*latPtr, *lngPtr, *logFilePtr)
+		if err != nil {
+			pretty.Println(err)
+			os.Exit(-1)
+		}
 	case "save":
 		storage := NewStorage(config.dbUrl)
 		db, err := storage.getDb(config.dbName, config.dbUsername, config.dbPassword)
@@ -160,8 +188,10 @@ func main() {
 			pretty.Println(err)
 			os.Exit(0)
 		}
-		choice := storage.findChoiceListByLocation(db, *latPtr, *lngPtr, 10)
-		pretty.Println(choice)
+		discoverInfo, err := storage.findDiscoverInfo(db, *latPtr, *lngPtr, 1000)
+		pretty.Println("discoverInfo: ", discoverInfo)
+		choices := storage.findChoiceListByLocation(db, *latPtr, *lngPtr, 1000)
+		pretty.Println("choices: ", choices)
 	case "web":
 		runWebServer()
 	case "api":
