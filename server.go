@@ -19,14 +19,24 @@ func homeHandler(rw http.ResponseWriter, r *http.Request) {
 
 func apiGeocodeHandler(rw http.ResponseWriter, r *http.Request) {
 
-	fmt.Fprintln(rw, "Api Geocode Handler")
+	log.Println("Api Geocode Handler")
 
-	vars := mux.Vars(r)
+	vars := r.URL.Query()
+	varLat, ok := vars["lat"]
+	if !ok {
+		rw.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	varLng, ok := vars["lng"]
+	if !ok {
+		rw.WriteHeader(http.StatusBadRequest)
+		return
+	}
 
 	geocode := geocoding.NewGeocode(config.googleApiKey, "en")
 
-	lat, _ := strconv.ParseFloat(vars["lat"], 64)
-	lng, _ := strconv.ParseFloat(vars["lng"], 64)
+	lat, _ := strconv.ParseFloat(varLat[0], 64)
+	lng, _ := strconv.ParseFloat(varLng[0], 64)
 
 	city, err := geocode.GetCityByLatlng(lat, lng)
 
@@ -41,7 +51,7 @@ func runApiServer() {
 
 	r := mux.NewRouter().StrictSlash(false)
 	r.HandleFunc("/", homeHandler)
-	r.HandleFunc("/getCity/{lat}/{lng}", apiGeocodeHandler)
+	r.HandleFunc("/getCity", apiGeocodeHandler)
 
 	n := negroni.Classic()
 	n.UseHandler(r)
