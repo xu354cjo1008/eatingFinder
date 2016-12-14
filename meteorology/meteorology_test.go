@@ -6,6 +6,7 @@ package meteorology
 
 import (
 	"fmt"
+	"sync"
 	"testing"
 
 	"github.com/spf13/viper"
@@ -40,27 +41,31 @@ func TestWeatherApi(t *testing.T) {
 		weatherTestCase{location: "Taoyuan City", expect: WX_MOSTLY + WX_CLEAR},
 	}
 
+	var wg sync.WaitGroup
+	wg.Add(len(testCases))
 	for index, testCase := range testCases {
-		//		dataOfLocation, err := DataOfLocation(weatherData.DataSet, testCase.location)
-		//		if dataOfLocation.WeatherElements[0].Time[0].Parameter.Name != testCase.expect || err != nil {
-		meteo := NewMeteorology(cwdApiKey, "en", nil)
-		data, err := meteo.GetWeather(testCase.location)
-		if err != nil || data.weather != testCase.expect {
-			t.Error(
-				"#", index,
-				"location", testCase.location,
-				"Expected", testCase.expect,
-				"Got", data.weather,
-				"Failed",
-			)
-		} else {
-			t.Log(
-				"#", index,
-				"location", testCase.location,
-				"Expected", testCase.expect,
-				"Got", data.weather,
-				"Pass",
-			)
-		}
+		go func() {
+			defer wg.Done()
+			meteo := NewMeteorology(cwdApiKey, "en", nil)
+			data, err := meteo.GetWeather(testCase.location)
+			if err != nil || data.weather != testCase.expect {
+				t.Error(
+					"#", index,
+					"location", testCase.location,
+					"Expected", testCase.expect,
+					"Got", data.weather,
+					"Failed",
+				)
+			} else {
+				t.Log(
+					"#", index,
+					"location", testCase.location,
+					"Expected", testCase.expect,
+					"Got", data.weather,
+					"Pass",
+				)
+			}
+		}()
 	}
+	wg.Wait()
 }

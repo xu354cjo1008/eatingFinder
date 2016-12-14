@@ -6,6 +6,7 @@ package geocoding
 
 import (
 	"fmt"
+	"sync"
 	"testing"
 
 	"github.com/spf13/viper"
@@ -48,25 +49,31 @@ func TestLocation(t *testing.T) {
 
 	geocode := NewGeocode(googleApiKey, "en")
 
+	var wg sync.WaitGroup
+	wg.Add(len(testCases))
 	for index, testCase := range testCases {
-		if res, err := geocode.GetCityByLatlng(testCase.lat, testCase.lng); res != testCase.expect || err != nil {
-			t.Error(
-				"#", index,
-				"For latitude", testCase.lat,
-				"longtitude", testCase.lng,
-				"Expected", testCase.expect,
-				"Got", res,
-				"Failed",
-			)
-		} else {
-			t.Log(
-				"#", index,
-				"For latitude", testCase.lat,
-				"longtitude", testCase.lng,
-				"Expected", testCase.expect,
-				"Got", res,
-				"Pass",
-			)
-		}
+		go func() {
+			defer wg.Done()
+			if res, err := geocode.GetCityByLatlng(testCase.lat, testCase.lng); res != testCase.expect || err != nil {
+				t.Error(
+					"#", index,
+					"For latitude", testCase.lat,
+					"longtitude", testCase.lng,
+					"Expected", testCase.expect,
+					"Got", res,
+					"Failed",
+				)
+			} else {
+				t.Log(
+					"#", index,
+					"For latitude", testCase.lat,
+					"longtitude", testCase.lng,
+					"Expected", testCase.expect,
+					"Got", res,
+					"Pass",
+				)
+			}
+		}()
 	}
+	wg.Wait()
 }
